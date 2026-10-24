@@ -2,7 +2,8 @@
 
 <div align="center">
 
-**AI 产品经理** · 厦门大学 2026 届 
+**AI 产品经理** · 厦门大学 2026 届
+
 **AI Product Manager** · Xiamen University '26
 
 产品经理 / 开源作者。做的是 agent 的记忆与可信度。  
