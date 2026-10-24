@@ -2,8 +2,8 @@
 
 <div align="center">
 
-**AI 产品经理** · 厦门大学 2026 届 · 广告学  
-**AI Product Manager** · Xiamen University '26 · Advertising
+**AI 产品经理** · 厦门大学 2026 届 
+**AI Product Manager** · Xiamen University '26
 
 产品经理 / 开源作者。做的是 agent 的记忆与可信度。  
 Product manager and open-source author, working on agent memory and trust.
@@ -101,12 +101,6 @@ For Claude Code, Codex and DeepSeek Harness. Read-only: it never updates anythin
 **语言 · Languages** — 英语 English（IELTS 口语 Speaking 7.0）· 法语 French（DELF B1）· 俄语 Russian / 日语 Japanese / 印尼语 Indonesian / 马来语 Malay（基础 basic）
 
 ---
-
-<div align="center">  
-<sub>
-
-关于名字：我和那位主播不是同一个人。我的作品是上面那三个仓库。  
-A note on the name: I am not the livestreamer with a similar name. My work is the three repositories above.
 
 </sub>  
 </div>
