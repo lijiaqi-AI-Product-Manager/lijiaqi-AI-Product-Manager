@@ -1,7 +1,6 @@
 """Publish public repository and package trends as portable, theme-aware SVGs."""
 
 import argparse
-from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 from html import escape
 import json
@@ -51,14 +50,26 @@ def normalize_daily(rows, start, end):
     return [{"date": day, "value": value} for day, value in sorted(values.items())]
 
 
-def star_points(rows):
-    days = Counter()
+def star_points(rows, today):
+    daily = {}
     for row in rows:
-        stamp = datetime.fromisoformat(row["starred_at"].replace("Z", "+00:00"))
-        days[stamp.astimezone(timezone.utc).date().isoformat()] += 1
+        start = datetime.fromtimestamp(valid_count(row["week"]), timezone.utc).date()
+        days = row["days"]
+        if not isinstance(days, list) or len(days) != 7:
+            raise ValueError("Expected seven daily counts in each GitHub aggregate week")
+        counts = [valid_count(value) for value in days]
+        if valid_count(row["total"]) != sum(counts):
+            raise ValueError("GitHub weekly total does not match its daily counts")
+        for offset, count in enumerate(counts):
+            day = (start + timedelta(days=offset)).isoformat()
+            if day in daily:
+                raise ValueError(f"Duplicate GitHub aggregate date: {day}")
+            daily[day] = count
     total = 0
     points = []
-    for day, count in sorted(days.items()):
+    for day, count in sorted(daily.items()):
+        if day > today.isoformat():
+            continue
         total += count
         points.append({"date": day, "value": total})
     return points
@@ -66,21 +77,25 @@ def star_points(rows):
 
 def collect_stars(owner, repo, today):
     rows = []
-    source = f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}/stargazers"
+    base = f"https://api.github.com/repos/{quote(owner)}/{quote(repo)}/stargazers"
+    source = f"{base}/history"
     for page in range(1, 101):
-        batch = fetch_json(f"{source}?per_page=100&page={page}", "application/vnd.github.star+json")
+        batch = fetch_json(f"{source}?per_page=30&page={page}")
         if not isinstance(batch, list):
-            raise ValueError("Unexpected GitHub stargazer response")
+            raise ValueError("Unexpected GitHub aggregate history response")
         rows.extend(batch)
-        if len(batch) < 100:
+        if len(batch) < 30:
             break
     else:
         raise ValueError("History exceeds the pagination budget; retain the previous chart")
-    points = star_points(rows)
+    total = valid_count(fetch_json(f"{base}/count")["count"])
+    points = star_points(rows, today)
     if not points:
+        if total:
+            raise ValueError("GitHub history is empty while the current Star count is nonzero")
         points = [{"date": today.isoformat(), "value": 0}]
-    return {"status": "ok", "source": source, "points": points, "total": len(rows)}
-
+    return {"status": "ok", "source": source, "count_source": f"{base}/count",
+            "points": points, "total": total}
 
 def collect_downloads(package, today, window_days):
     start = today - timedelta(days=window_days)
@@ -157,11 +172,11 @@ def render_chart(project, series, kind, theme, mobile, today):
     value = f"{total:,}" if total is not None else "—"
     value_label = "current stars" if kind == "stars" else "requests in shown period"
     title = f"{project['name']} — {subtitle}"
-    description = ("Current stargazers reconstructed by their star dates; removed stars are not included." if kind == "stars" else
+    description = ("Cumulative counts from GitHub public daily aggregates. API day boundaries may differ from UTC." if kind == "stars" else
                    "Daily package download requests from reported dates. Repeated or automated requests may be included; these are not unique users.")
     checked = series.get("last_success_at" if status == "stale" else "checked_at", today.isoformat())[:10]
     update = f"Last success {checked} UTC · update unavailable" if status == "stale" else f"Updated {checked} UTC"
-    source_note = ("GitHub REST · current stargazers only; removed stars excluded." if kind == "stars" else
+    source_note = ("GitHub REST · public daily aggregates; API day boundaries." if kind == "stars" else
                    ("npm download-counts · requests, not unique users." if package.get("registry") == "npm" else
                     "PyPI Stats · known mirrors excluded; requests, not unique users."))
     if status == "unavailable":

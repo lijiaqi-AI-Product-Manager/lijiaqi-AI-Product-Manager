@@ -72,6 +72,27 @@ My account also contains forks of [Lobe Chat](https://github.com/lijiaqi-AI-Prod
 
 </details>
 
+<!-- project-growth:start -->
+
+## Project growth
+
+Star history updates daily. Refresh dates use UTC; Star dates follow GitHub's aggregates.
+
+<a href="https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/stargazers">
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-dark.svg">
+  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-light.svg" width="960" alt="Li Jiaqi / Gauss · GitHub Star history">
+</picture>
+</a>
+
+Download-request trends for individual projects appear in their own READMEs.
+
+[Data sources and metric definitions](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
+
+<!-- project-growth:end -->
+
 ---
 
 **Let's make something useful.** [lijiaqi.mun@gmail.com](mailto:lijiaqi.mun@gmail.com) · [LinkedIn](https://www.linkedin.com/in/jiaqi-li-ai-product-manager/)

@@ -65,10 +65,33 @@ class GrowthDataTests(unittest.TestCase):
             with self.subTest(rows=rows), self.assertRaises(ValueError):
                 growth.normalize_daily(rows, date(2026, 10, 1), date(2026, 11, 2))
 
-    def test_stars_store_only_aggregated_dates(self):
-        rows = [{"starred_at": "2026-11-02T10:00:00Z", "user": {"login": "public-user"}},
-                {"starred_at": "2026-11-01T10:00:00Z", "user": {"login": "another-user"}}]
-        self.assertEqual(growth.star_points(rows), [{"date": "2026-11-01", "value": 1}, {"date": "2026-11-02", "value": 2}])
+    def test_public_weekly_star_aggregates_are_sorted_and_cumulative(self):
+        rows = [
+            {"week": 1793491200, "total": 1, "days": [0, 0, 1, 0, 0, 0, 0]},
+            {"week": 1792886400, "total": 2, "days": [0, 0, 1, 1, 0, 0, 0]},
+        ]
+        points = growth.star_points(rows, date(2026, 11, 3))
+        self.assertEqual(points[0], {"date": "2026-10-25", "value": 0})
+        self.assertEqual(points[-1], {"date": "2026-11-03", "value": 3})
+        self.assertEqual(next(p["value"] for p in points if p["date"] == "2026-10-28"), 2)
+        self.assertEqual(len(points), 10)
+        self.assertNotIn("user", repr(points))
+
+    def test_invalid_or_duplicate_star_aggregate_weeks_are_rejected(self):
+        valid = {"week": 1793491200, "total": 1, "days": [0, 0, 1, 0, 0, 0, 0]}
+        for rows in ([valid, valid], [{"week": 1793491200, "total": 1, "days": [0]}],
+                     [{"week": 1793491200, "total": 4, "days": [0, 0, 1, 0, 0, 0, 0]}]):
+            with self.subTest(rows=rows), self.assertRaises(ValueError):
+                growth.star_points(rows, date(2026, 11, 3))
+
+    def test_star_collection_uses_public_history_and_count_endpoints(self):
+        rows = [{"week": 1793491200, "total": 1, "days": [0, 0, 1, 0, 0, 0, 0]}]
+        with patch.object(growth, "fetch_json", side_effect=[rows, {"count": 1}]) as request:
+            result = growth.collect_stars("example", "demo", date(2026, 11, 3))
+        urls = [call.args[0] for call in request.call_args_list]
+        self.assertTrue(urls[0].endswith("/stargazers/history?per_page=30&page=1"))
+        self.assertTrue(urls[1].endswith("/stargazers/count"))
+        self.assertEqual(result["total"], 1)
 
 
 if __name__ == "__main__":
