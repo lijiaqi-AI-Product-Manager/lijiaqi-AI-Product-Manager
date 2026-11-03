@@ -27,6 +27,10 @@
 
 设计研究参考 [Awesome GitHub Profile README](https://github.com/abhisheknaiidu/awesome-github-profile-readme)、[Caneco](https://github.com/caneco/caneco)、[DenverCoder1](https://github.com/DenverCoder1/DenverCoder1) 与 [Sindre Sorhus](https://github.com/sindresorhus/sindresorhus)，提取人物识别、作品导航、统一卡片和简洁产品入口的组织方式。没有复制它们的代码、插画或个人陈述。
 
+## 增长图表
+
+各公开仓库的 Star 曲线与已发布包的每日下载请求由 `scripts/update_growth.py` 统一生成，范围在 `data/growth-config.json` 中登记。`Project growth charts` 工作流每天更新 `assets/growth/` 与公开聚合数据；图片支持深浅主题和手机布局。新包数据缺失不写成零，请求失败保留上次成功结果并标明状态。统计口径见 [增长图表说明](growth.md)。
+
 ## 更新与检查
 
 ```bash

@@ -1,0 +1,249 @@
+{
+  "projects": {
+    "job_radar": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      },
+      "downloads": {
+        "status": "ok",
+        "source": "https://pypistats.org/api/packages/jobsearchradar/overall?mirrors=false",
+        "points": [
+          {
+            "date": "2026-10-24",
+            "value": 98
+          },
+          {
+            "date": "2026-10-25",
+            "value": 10
+          },
+          {
+            "date": "2026-10-26",
+            "value": 13
+          },
+          {
+            "date": "2026-10-27",
+            "value": 3
+          },
+          {
+            "date": "2026-10-28",
+            "value": 4
+          },
+          {
+            "date": "2026-10-29",
+            "value": 4
+          },
+          {
+            "date": "2026-10-30",
+            "value": 1
+          },
+          {
+            "date": "2026-10-31",
+            "value": 4
+          },
+          {
+            "date": "2026-11-01",
+            "value": 259
+          },
+          {
+            "date": "2026-11-02",
+            "value": 443
+          }
+        ],
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "last_success_at": "2026-11-03T11:47:01+00:00"
+      }
+    },
+    "dsh-agent-compare": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      },
+      "downloads": {
+        "status": "pending",
+        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-02/dsh-agent-compare",
+        "points": [],
+        "published": "2026-11-03",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "last_success_at": "2026-11-03T11:47:01+00:00"
+      }
+    },
+    "dsh-bug-gps": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "skill-healthcheck": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      },
+      "downloads": {
+        "status": "ok",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-02/skill-healthcheck",
+        "points": [
+          {
+            "date": "2026-10-23",
+            "value": 641
+          },
+          {
+            "date": "2026-10-24",
+            "value": 434
+          },
+          {
+            "date": "2026-10-25",
+            "value": 31
+          },
+          {
+            "date": "2026-10-26",
+            "value": 22
+          },
+          {
+            "date": "2026-10-27",
+            "value": 49
+          },
+          {
+            "date": "2026-10-28",
+            "value": 9
+          },
+          {
+            "date": "2026-10-29",
+            "value": 4
+          },
+          {
+            "date": "2026-10-30",
+            "value": 9
+          },
+          {
+            "date": "2026-10-31",
+            "value": 9
+          },
+          {
+            "date": "2026-11-01",
+            "value": 9
+          },
+          {
+            "date": "2026-11-02",
+            "value": 12
+          }
+        ],
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "last_success_at": "2026-11-03T11:47:01+00:00"
+      }
+    },
+    "unremember": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      },
+      "downloads": {
+        "status": "ok",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-02/unremember",
+        "points": [
+          {
+            "date": "2026-10-23",
+            "value": 485
+          },
+          {
+            "date": "2026-10-24",
+            "value": 260
+          },
+          {
+            "date": "2026-10-25",
+            "value": 21
+          },
+          {
+            "date": "2026-10-26",
+            "value": 13
+          },
+          {
+            "date": "2026-10-27",
+            "value": 29
+          },
+          {
+            "date": "2026-10-28",
+            "value": 5
+          },
+          {
+            "date": "2026-10-29",
+            "value": 6
+          },
+          {
+            "date": "2026-10-30",
+            "value": 7
+          },
+          {
+            "date": "2026-10-31",
+            "value": 6
+          },
+          {
+            "date": "2026-11-01",
+            "value": 2
+          },
+          {
+            "date": "2026-11-02",
+            "value": 5
+          }
+        ],
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "last_success_at": "2026-11-03T11:47:01+00:00"
+      }
+    },
+    "QGauss-AI": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "xiangcunxiaozao": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "AirStudy": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "lijiaqi-AI-Product-Manager": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "lobe-chat": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "coai": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    },
+    "blob-service": {
+      "stars": {
+        "status": "unavailable",
+        "checked_at": "2026-11-03T11:47:01+00:00",
+        "error": "HTTPError: HTTP Error 401: Unauthorized"
+      }
+    }
+  },
+  "generated_at": "2026-11-03T11:47:01+00:00"
+}

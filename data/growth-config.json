@@ -1,0 +1,73 @@
+{
+  "owner": "lijiaqi-AI-Product-Manager",
+  "window_days": 90,
+  "projects": [
+    {
+      "repo": "job_radar",
+      "name": "job_radar",
+      "package": {
+        "registry": "pypi",
+        "name": "jobsearchradar"
+      }
+    },
+    {
+      "repo": "dsh-agent-compare",
+      "name": "AgentCompare",
+      "package": {
+        "registry": "npm",
+        "name": "dsh-agent-compare"
+      }
+    },
+    {
+      "repo": "dsh-bug-gps",
+      "name": "BugGPS"
+    },
+    {
+      "repo": "skill-healthcheck",
+      "name": "skill-healthcheck",
+      "package": {
+        "registry": "npm",
+        "name": "skill-healthcheck"
+      }
+    },
+    {
+      "repo": "unremember",
+      "name": "unremember",
+      "package": {
+        "registry": "npm",
+        "name": "unremember"
+      }
+    },
+    {
+      "repo": "QGauss-AI",
+      "name": "QGauss AI"
+    },
+    {
+      "repo": "xiangcunxiaozao",
+      "name": "Xiangcun Xiaozhao"
+    },
+    {
+      "repo": "AirStudy",
+      "name": "AirStudy"
+    },
+    {
+      "repo": "lijiaqi-AI-Product-Manager",
+      "name": "Li Jiaqi / Gauss"
+    },
+    {
+      "repo": "lobe-chat",
+      "name": "lobe-chat",
+      "kind": "fork"
+    },
+    {
+      "repo": "coai",
+      "name": "CoAI",
+      "kind": "fork"
+    },
+    {
+      "repo": "blob-service",
+      "name": "Blob Service",
+      "kind": "fork"
+    }
+  ]
+}
