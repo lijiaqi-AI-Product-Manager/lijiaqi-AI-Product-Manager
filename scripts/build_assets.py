@@ -47,11 +47,12 @@ def hero(theme):
     b += text(58, 67, "PRODUCT / AI / ENGINEERING", 15, p["mint"], 600, MONO, 'letter-spacing="2.2"')
     b += text(54, 182, "李佳奇", 88, p["text"], 700)
     b += text(58, 234, "Li Jiaqi / Gauss", 34, p["muted"], 400)
-    b += text(58, 304, "把真实问题，做成好用的产品。", 27, p["text"], 500)
+    b += text(58, 283, "把真实问题，做成好用的产品。", 27, p["text"], 500)
+    b += text(58, 316, "Turning real problems into useful products.", 20, p["muted"])
     b += line(58, 344, 620, 344, p["line"])
-    b += text(58, 384, "AI 产品经理", 20, p["text"], 600)
-    b += text(240, 384, "厦门大学 · 2029 届", 20, p["muted"])
-    b += text(58, 431, "Research → Build → Verify → Iterate", 15, p["muted"], 400, MONO)
+    b += text(58, 379, "AI 产品经理 · AI Product Manager", 20, p["text"], 600)
+    b += text(58, 413, "厦门大学 2029 届 · Xiamen University '29", 18, p["muted"])
+    b += text(58, 449, "Research → Build → Verify → Iterate", 14, p["muted"], 400, MONO)
     # An original orbit diagram; no borrowed project logo or third-party asset.
     b += '<g transform="translate(988,235)">'
     b += f'<ellipse rx="178" ry="139" fill="none" stroke="{p["line"]}" stroke-dasharray="4 8"/>'
@@ -73,34 +74,38 @@ def hero(theme):
 
 def mobile_artwork(theme):
     p = THEMES[theme]
-    b = rect(1, 1, 622, 438, p["bg"], 24, p["line"])
+    b = rect(1, 1, 622, 498, p["bg"], 24, p["line"])
     b += text(35, 49, "PRODUCT / AI / ENGINEERING", 13, p["mint"], 600, MONO)
     b += text(31, 142, "李佳奇", 74, p["text"], 700)
     b += text(35, 187, "Li Jiaqi / Gauss", 28, p["muted"])
-    b += text(35, 252, "把真实问题，做成好用的产品。", 27, p["text"], 500)
-    b += line(35, 285, 589, 285, p["line"])
-    b += text(35, 330, "AI 产品经理", 25, p["text"], 600)
-    b += text(35, 373, "厦门大学 · 2029 届", 24, p["muted"])
-    b += text(35, 410, "Research → Build → Verify → Iterate", 13, p["muted"], 400, MONO)
+    b += text(35, 247, "把真实问题，做成好用的产品。", 27, p["text"], 500)
+    b += text(35, 280, "Turning real problems into useful products.", 19, p["muted"])
+    b += line(35, 309, 589, 309, p["line"])
+    b += text(35, 350, "AI 产品经理", 25, p["text"], 600)
+    b += text(35, 381, "AI Product Manager", 21, p["muted"])
+    b += text(35, 420, "厦门大学 · 2029 届", 24, p["text"])
+    b += text(35, 450, "Xiamen University · Class of 2029", 19, p["muted"])
+    b += text(35, 481, "Research → Build → Verify → Iterate", 13, p["muted"], 400, MONO)
     b += f'<ellipse cx="492" cy="138" rx="67" ry="53" fill="none" stroke="{p["mint"]}" opacity=".4" transform="rotate(-28 492 138)"/>'
     b += dot(492, 138, 35, p["soft"]) + text(492, 148, "LJ", 29, p["text"], 500, MONO, 'text-anchor="middle"')
     b += dot(551, 112, 5, p["warm"])
-    wrap("hero-mobile", theme, 624, 440, "李佳奇 Li Jiaqi — AI 产品经理，厦门大学 2029 届", b)
-    b = rect(1, 1, 622, 348, p["bg"], 22, p["line"])
-    for x, y, num, title, sub in [(30, 25, "01", "看见问题", "研究 / 竞品实测"), (337, 25, "02", "定义行为", "PRD / 状态机"), (30, 193, "03", "实现产品", "AI Coding / 工作流"), (337, 193, "04", "用证据迭代", "真实运行 / 数据复盘")]:
+    wrap("hero-mobile", theme, 624, 500, "李佳奇 Li Jiaqi — AI Product Manager, Xiamen University Class of 2029", b)
+    b = rect(1, 1, 622, 388, p["bg"], 22, p["line"])
+    for x, y, num, title, en, sub in [(30, 20, "01", "看见问题", "Understand the problem", "Research / competitive testing"), (337, 20, "02", "定义行为", "Define behavior", "PRDs / states / acceptance"), (30, 207, "03", "实现产品", "Build the product", "AI Coding / full-stack"), (337, 207, "04", "用证据迭代", "Verify and iterate", "Replay / regression / metrics")]:
         b += text(x, y + 25, num, 18, p["mint"], 500, MONO)
         b += text(x, y + 73, title, 30, p["text"], 600)
-        b += text(x, y + 110, sub, 19, p["muted"])
-    wrap("process-mobile", theme, 624, 350, "看见问题、定义行为、实现产品、用证据迭代", b)
+        b += text(x, y + 108, en, 18, p["muted"])
+        b += text(x, y + 139, sub, 13, p["muted"])
+    wrap("process-mobile", theme, 624, 390, "看见问题、定义行为、实现产品、用证据迭代 / Research, define, build, verify", b)
 
 
 PROJECTS = [
-    ("job-radar", "01", "DATA / OPPORTUNITY", "job_radar", "把招聘信息，变成本地可查询的数据。", "Python · SQLite · CLI / MCP", "mint"),
-    ("qgauss", "02", "CREATIVE / WORKSPACE", "QGauss AI", "对话、图像、视频与声音，一个工作台。", "Vue · NestJS · Prisma", "warm"),
-    ("agent-compare", "03", "AGENTS / DECISIONS", "AgentCompare", "同一需求，两版真跑，盲选再揭晓。", "TypeScript · Git worktree · DSH", "mint"),
-    ("bug-gps", "04", "AGENTS / VERIFICATION", "BugGPS", "录下问题，按原预期复核修复。", "JavaScript · Playwright · DSH", "warm"),
-    ("skill-healthcheck", "05", "AGENTS / OBSERVABILITY", "skill-healthcheck", "技能还在，为什么助手不再调用？", "TypeScript · Git · Local evidence", "mint"),
-    ("unremember", "06", "AGENTS / PRIVACY", "unremember", "让本地 Agent 的遗忘可验证、可回滚。", "TypeScript · JSONL / Zstd · SHA-256", "warm"),
+    ("job-radar", "01", "DATA / OPPORTUNITY", "job_radar", "把招聘信息，变成本地可查询的数据。", "Public job data, ready for local search.", "Python · SQLite · CLI / MCP", "mint"),
+    ("qgauss", "02", "CREATIVE / WORKSPACE", "QGauss AI", "对话、图像、视频与声音，一个工作台。", "Chat, images, video and voice in one workspace.", "Vue · NestJS · Prisma", "warm"),
+    ("agent-compare", "03", "AGENTS / DECISIONS", "AgentCompare", "同一需求，两版真跑，盲选再揭晓。", "Two live builds. Choose first, reveal later.", "TypeScript · Git worktree · DSH", "mint"),
+    ("bug-gps", "04", "AGENTS / VERIFICATION", "BugGPS", "录下问题，按原预期复核修复。", "Record the bug. Replay the original expectation.", "JavaScript · Playwright · DSH", "warm"),
+    ("skill-healthcheck", "05", "AGENTS / OBSERVABILITY", "skill-healthcheck", "技能还在，为什么助手不再调用？", "Find skills that silently stopped working.", "TypeScript · Git · Local evidence", "mint"),
+    ("unremember", "06", "AGENTS / PRIVACY", "unremember", "让本地 Agent 的遗忘可验证、可回滚。", "Verifiable, reversible forgetting for local agents.", "TypeScript · JSONL / Zstd · SHA-256", "warm"),
 ]
 
 
@@ -111,19 +116,21 @@ def window(p, x=34, y=161, w=556, h=132):
     return b + line(x, y + 31, x + w, y + 31, p["line"])
 
 
-def card(slug, num, label, name, desc, stack, accent, theme):
+def card(slug, num, label, name, desc, en, stack, accent, theme):
     p = THEMES[theme]
     col = p[accent]
-    b = rect(1, 1, 622, 358, p["bg"], 22, p["line"])
+    b = rect(1, 1, 622, 382, p["bg"], 22, p["line"])
     b += text(34, 36, label, 12, col, 600, MONO, 'letter-spacing="1.6"')
     b += text(590, 36, num, 14, p["muted"], 400, MONO, 'text-anchor="end"')
     title_size = 34 if len(name) > 14 else 39
     b += text(32, 88, name, title_size, p["text"], 650)
     b += text(34, 126, desc, 21, p["muted"])
+    b += text(34, 153, en, 16, p["muted"])
+    b += '<g transform="translate(0,22)">'
     if slug == "job-radar":
         b += window(p)
         b += text(88, 182, "LOCAL DATA / ORIGINAL SOURCES", 11, p["muted"], 400, MONO)
-        for yy, company, role, badge in [(219, "公司 / 城市", "职位与 JD", "来源"), (249, "届次 / 类型", "筛选与证据", "日期"), (279, "日历 / 变更", "本地 SQLite", "状态")]:
+        for yy, company, role, badge in [(219, "Company / city", "Jobs & JD", "Source"), (249, "Year / type", "Filters & evidence", "Date"), (279, "Calendar / changes", "Local SQLite", "State")]:
             b += dot(52, yy - 5, 3, col)
             b += text(65, yy, company, 13, p["text"])
             b += text(239, yy, role, 13, p["muted"])
@@ -132,7 +139,7 @@ def card(slug, num, label, name, desc, stack, accent, theme):
     elif slug == "qgauss":
         b += window(p)
         b += text(88, 182, "YOUR MULTIMODAL STUDIO", 11, p["muted"], 400, MONO)
-        for x, mark, caption in [(52, "Aa", "对话"), (184, "◇", "图像"), (316, "▷", "视频"), (448, "≈", "声音")]:
+        for x, mark, caption in [(52, "Aa", "Chat"), (184, "◇", "Image"), (316, "▷", "Video"), (448, "≈", "Voice")]:
             b += rect(x, 207, 124, 68, p["soft"], 10)
             b += text(x + 20, 244, mark, 29, col, 500, MONO)
             b += text(x + 72, 245, caption, 13, p["text"])
@@ -150,14 +157,14 @@ def card(slug, num, label, name, desc, stack, accent, theme):
         b += window(p)
         b += text(88, 182, "RECORD → LOCK → VERIFY", 11, p["muted"], 400, MONO)
         b += line(106, 235, 518, 235, p["line"], 3)
-        for x, yy, lbl, tag, color in [(106, 235, "录制", "EXPECTATION", p["warm"]), (312, 235, "锁定", "SAME FAILURE", p["muted"]), (518, 235, "复核", "VERIFIED", p["mint"])]:
+        for x, yy, lbl, tag, color in [(106, 235, "Record", "EXPECTATION", p["warm"]), (312, 235, "Lock", "SAME FAILURE", p["muted"]), (518, 235, "Verify", "VERIFIED", p["mint"])]:
             b += dot(x, yy, 17, p["soft"]) + dot(x, yy, 6, color)
             b += text(x, 213, lbl, 13, p["text"], 500, extra='text-anchor="middle"')
             b += text(x, 275, tag, 10, color, 500, MONO, 'text-anchor="middle"')
     elif slug == "skill-healthcheck":
         b += window(p)
         b += text(88, 182, "$ skill-healthcheck", 11, p["muted"], 400, MONO)
-        for yy, symbol, label2, status, color in [(220, "✓", "技能加载规则", "CHECK", p["mint"]), (248, "!", "上游 description", "CHANGED", p["warm"]), (276, "↳", "会话使用时间线", "WHY", p["mint"])]:
+        for yy, symbol, label2, status, color in [(220, "✓", "Host loading rules", "CHECK", p["mint"]), (248, "!", "Upstream description", "CHANGED", p["warm"]), (276, "↳", "Session timeline", "WHY", p["mint"])]:
             b += text(51, yy, symbol, 15, color, 600, MONO)
             b += text(78, yy, label2, 14, p["text"])
             b += text(567, yy, status, 11, color, 400, MONO, 'text-anchor="end"')
@@ -175,32 +182,35 @@ def card(slug, num, label, name, desc, stack, accent, theme):
     b += line(34, 312, 590, 312, p["line"])
     b += text(34, 339, stack, 12, p["muted"], 400, MONO)
     b += text(589, 339, "↗", 22, col, 400, extra='text-anchor="end"')
-    wrap(slug, theme, 624, 360, f"{name} — {desc} {stack}", b)
+    b += "</g>"
+    wrap(slug, theme, 624, 384, f"{name} — {desc} {en} {stack}", b)
 
 
 def process(theme):
     p = THEMES[theme]
-    b = rect(1, 1, 1278, 217, p["bg"], 22, p["line"])
-    steps = [("01", "看见问题", "研究 / 访谈 / 竞品实测"), ("02", "定义行为", "PRD / 状态机 / 验收标准"), ("03", "实现产品", "AI Coding / 全栈 / 工作流"), ("04", "用证据迭代", "真实运行 / 回归 / 数据复盘")]
-    for i, (num, title, sub) in enumerate(steps):
+    b = rect(1, 1, 1278, 242, p["bg"], 22, p["line"])
+    steps = [("01", "看见问题", "Understand the problem", "Research / competitive testing"), ("02", "定义行为", "Define behavior", "PRDs / states / acceptance"), ("03", "实现产品", "Build the product", "AI Coding / full-stack"), ("04", "用证据迭代", "Verify and iterate", "Replay / regression / metrics")]
+    for i, (num, title, en, sub) in enumerate(steps):
         x = 35 + 317 * i
         b += text(x, 49, num, 17, p["mint"], 500, MONO)
         b += text(x, 99, title, 28, p["text"], 600)
-        b += text(x, 140, sub, 17, p["muted"])
-        b += rect(x, 173, 240, 4, p["soft"], 2)
-        b += rect(x, 173, 50 + 48 * i, 4, p["mint"], 2)
+        b += text(x, 136, en, 17, p["muted"])
+        b += text(x, 169, sub, 13, p["muted"])
+        b += rect(x, 198, 240, 4, p["soft"], 2)
+        b += rect(x, 198, 50 + 48 * i, 4, p["mint"], 2)
         if i < 3:
             b += text(x + 270, 103, "→", 24, p["muted"])
-    wrap("process", theme, 1280, 218, "工作方式：看见问题、定义行为、实现产品、用证据迭代", b)
+    wrap("process", theme, 1280, 244, "工作方式 / How I work: research, define, build, verify", b)
 
 
 def footer(theme):
     p = THEMES[theme]
-    b = rect(1, 1, 1278, 134, p["bg"], 22, p["line"])
+    b = rect(1, 1, 1278, 158, p["bg"], 22, p["line"])
     b += text(38, 53, "LET'S MAKE SOMETHING USEFUL.", 25, p["text"], 600, MONO)
-    b += text(38, 96, "AI 产品 · 开源工具 · 真实业务 · 欢迎交流与合作", 19, p["muted"])
+    b += text(38, 92, "AI 产品 · 开源工具 · 真实业务 · 欢迎交流与合作", 19, p["muted"])
+    b += text(38, 126, "AI products · Open source · Real-world operations · Let's connect", 16, p["muted"])
     b += dot(1206, 67, 17, p["soft"]) + text(1206, 75, "↗", 24, p["mint"], 500, extra='text-anchor="middle"')
-    wrap("footer", theme, 1280, 136, "欢迎交流 AI 产品、开源工具与真实业务", b)
+    wrap("footer", theme, 1280, 160, "欢迎交流 / Let's connect: AI products, open-source tools and real-world operations", b)
 
 
 def main():

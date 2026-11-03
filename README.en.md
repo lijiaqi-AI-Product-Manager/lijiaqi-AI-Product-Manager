@@ -5,7 +5,7 @@
   <img src="assets/hero-light.svg" width="1280" alt="Li Jiaqi / Gauss — AI Product Manager and product builder. Xiamen University, Class of 2029.">
 </picture>
 
-<p align="center"><a href="#selected-work">Selected work</a> &nbsp; / &nbsp; <a href="#experience">Experience</a> &nbsp; / &nbsp; <a href="docs/project-atlas.md">Project atlas · 中文</a> &nbsp; / &nbsp; <a href="README.md">简体中文</a></p>
+<p align="center"><a href="#selected-work">Selected work</a> &nbsp; / &nbsp; <a href="#experience">Experience</a> &nbsp; / &nbsp; <a href="docs/project-atlas.en.md">Project guide</a> &nbsp; / &nbsp; <a href="README.md">中文 / English together</a></p>
 
 # Hi, I'm Li Jiaqi.
 
@@ -21,12 +21,12 @@ I'm an Advertising undergraduate at **Xiamen University, Class of 2029**. I prev
 
 | Product | What it helps you do | Technology and entry point |
 | :--- | :--- | :--- |
-| **[job_radar](https://github.com/lijiaqi-AI-Product-Manager/job_radar)** | Search Chinese campus, internship and experienced-hire listings with source text, recruitment calendars and explicit unknown conditions. Download snapshots and query locally. | Python · SQLite · CLI / MCP / Skill. Install `jobsearchradar`, then run `jobradar update`. [Project notes](docs/projects/job-radar.md) |
-| **[QGauss AI](https://github.com/lijiaqi-AI-Product-Manager/QGauss-AI)** | Bring multi-model chat, image editing, video, voice, mind maps and applications into a self-hosted creative workspace with site operations tools. | Vue · NestJS · Prisma · SQLite. Guided setup from source; real providers and commerce need deployment configuration. [Project notes](docs/projects/qgauss.md) |
-| **[AgentCompare](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare)** | Generate two front-end implementations from one baseline, run both, compare before revealing models or strategies, then review and adopt the result. | TypeScript · React · Git worktree · DSH. Source/package installation; current scope is local root-level Vite projects. [Project notes](docs/projects/agent-compare.md) |
-| **[BugGPS](https://github.com/lijiaqi-AI-Product-Manager/dsh-bug-gps)** | Record a browser problem and the expected behavior, lock a reproducible failure, and replay the original scenario against the fix. | JavaScript · Playwright · Git · DSH. Local plugin installation and a built-in demo. [Project notes](docs/projects/bug-gps.md) |
-| **[skill-healthcheck](https://github.com/lijiaqi-AI-Product-Manager/skill-healthcheck)** | Find skills that silently stopped working. Combine host loading rules, upstream changes and session timelines to rank plausible explanations. | TypeScript · Git · Local evidence. Start with `npx skill-healthcheck`; source skills are not automatically updated. [Project notes](docs/projects/skill-healthcheck.md) |
-| **[unremember](https://github.com/lijiaqi-AI-Product-Manager/unremember)** | Selectively remove content from supported local agent files, inspect a plan, back up, apply, probe a fork and roll back when needed. | TypeScript · JSONL / Zstandard · SHA-256. Claude Code and DSH; local files only. [Project notes](docs/projects/unremember.md) |
+| **[job_radar](https://github.com/lijiaqi-AI-Product-Manager/job_radar)** | Search Chinese campus, internship and experienced-hire listings with source text, recruitment calendars and explicit unknown conditions. Download snapshots and query locally. | Python · SQLite · CLI / MCP / Skill. Install `jobsearchradar`, then run `jobradar update`. [Project guide](docs/project-atlas.en.md#job-radar) |
+| **[QGauss AI](https://github.com/lijiaqi-AI-Product-Manager/QGauss-AI)** | Bring multi-model chat, image editing, video, voice, mind maps and applications into a self-hosted creative workspace with site operations tools. | Vue · NestJS · Prisma · SQLite. Guided setup from source; real providers and commerce need deployment configuration. [Project guide](docs/project-atlas.en.md#qgauss) |
+| **[AgentCompare](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare)** | Generate two front-end implementations from one baseline, run both, compare before revealing models or strategies, then review and adopt the result. | TypeScript · React · Git worktree · DSH. Source/package installation; current scope is local root-level Vite projects. [Project guide](docs/project-atlas.en.md#agent-compare) |
+| **[BugGPS](https://github.com/lijiaqi-AI-Product-Manager/dsh-bug-gps)** | Record a browser problem and the expected behavior, lock a reproducible failure, and replay the original scenario against the fix. | JavaScript · Playwright · Git · DSH. Local plugin installation and a built-in demo. [Project guide](docs/project-atlas.en.md#bug-gps) |
+| **[skill-healthcheck](https://github.com/lijiaqi-AI-Product-Manager/skill-healthcheck)** | Find skills that silently stopped working. Combine host loading rules, upstream changes and session timelines to rank plausible explanations. | TypeScript · Git · Local evidence. Start with `npx skill-healthcheck`; source skills are not automatically updated. [Project guide](docs/project-atlas.en.md#skill-healthcheck) |
+| **[unremember](https://github.com/lijiaqi-AI-Product-Manager/unremember)** | Selectively remove content from supported local agent files, inspect a plan, back up, apply, probe a fork and roll back when needed. | TypeScript · JSONL / Zstandard · SHA-256. Claude Code and DSH; local files only. [Project guide](docs/project-atlas.en.md#unremember) |
 
 <details>
 <summary><strong>Watch AgentCompare: running previews, shared checks and adoption</strong></summary>
@@ -37,9 +37,9 @@ This uses fixed candidates. Application execution, shared checks and adoption ar
 
 </details>
 
-**[Xiangcun Xiaozhao](docs/projects/xiangcun.md)** brings QR ordering, kitchen updates, stored-value accounts, refunds, reconciliation, overnight closing reports and receipt printing into one restaurant workflow. React, Hono, SQLite and shared contracts connect the customer and owner interfaces.
+**[Xiangcun Xiaozhao](docs/project-atlas.en.md#xiangcun)** brings QR ordering, kitchen updates, stored-value accounts, refunds, reconciliation, overnight closing reports and receipt printing into one restaurant workflow. React, Hono, SQLite and shared contracts connect the customer and owner interfaces.
 
-**[AirStudy](docs/projects/airstudy.md)** explores Android focus sessions through airports, routes, boarding passes and flight records. Local implementation uses Kotlin, View/XML, Room, Hilt, DataStore and Ktor. Its public repository currently provides a project entry and license, rather than the complete implementation or a downloadable product.
+**[AirStudy](docs/project-atlas.en.md#airstudy)** explores Android focus sessions through airports, routes, boarding passes and flight records. Local implementation uses Kotlin, View/XML, Room, Hilt, DataStore and Ktor. Its public repository currently provides a project entry and license, rather than the complete implementation or a downloadable product.
 
 ## How I work
 
@@ -59,7 +59,7 @@ My toolkit includes competitive testing, PRDs, state machines, acceptance criter
 | **MUNity** | Founder and product R&D lead; Model UN AI agents and community platform | Since Sep 2026 |
 | **Lenovo · Baiying** | Enterprise AI Product Manager internship; **accepted, not yet started** | Planned Jan – Feb 2027 |
 
-At Fliggy, I designed a 22-question evaluation set and conducted approximately 330 dialogue rounds across six OTA assistants. Findings informed requirements, state machines, fallback behavior and an AI-assisted interactive prototype. [Detailed experience · 中文](docs/experience.md)
+At Fliggy, I designed a 22-question evaluation set and conducted approximately 330 dialogue rounds across six OTA assistants. Findings informed requirements, state machines, fallback behavior and an AI-assisted interactive prototype. [Detailed experience](docs/experience.en.md)
 
 I have also served on academic teams and dais at national Model UN conferences, chaired more than 20 conferences, and founded the Shijiazhuang Model UN Association. Selected honors include Outstanding Camper at Peking University's School of International Studies summer program and a National Second Prize in the China division of IMMC.
 
@@ -68,7 +68,7 @@ I have also served on academic teams and dais at national Model UN conferences, 
 <details>
 <summary><strong>Upstream reading and attribution</strong></summary>
 
-My account also contains forks of [Lobe Chat](https://github.com/lijiaqi-AI-Product-Manager/lobe-chat), [CoAI](https://github.com/lijiaqi-AI-Product-Manager/coai) and [Blob Service](https://github.com/lijiaqi-AI-Product-Manager/blob-service). Their original development belongs to their upstream authors. [Separate reading notes](docs/projects/ecosystem.md) preserve the distinction.
+My account also contains forks of [Lobe Chat](https://github.com/lijiaqi-AI-Product-Manager/lobe-chat), [CoAI](https://github.com/lijiaqi-AI-Product-Manager/coai) and [Blob Service](https://github.com/lijiaqi-AI-Product-Manager/blob-service). Their original development belongs to their upstream authors. [Separate reading notes](docs/project-atlas.en.md#upstream) preserve the distinction.
 
 </details>
 
