@@ -1,0 +1,182 @@
+{
+  "reviewedOn": "2026-11-03",
+  "scope": "All public repositories visible on the owner's account at review time. Representative implementations and regressions are reviewed; this is not a claim to have read every generated or vendor file.",
+  "repositories": [
+    {
+      "repository": "lijiaqi-AI-Product-Manager/lobe-chat",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/lobe-chat",
+      "reviewedHead": "c5df7d1f2d8479aba0f69f5a9970cadc38489976",
+      "defaultBranch": "next",
+      "kind": "upstream-fork",
+      "reviewedPaths": [
+        "AGENTS.md",
+        "README.zh-CN.md",
+        "package.json",
+        "packages/database/src/index.ts"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/blob-service",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/blob-service",
+      "reviewedHead": "c22105335493485b02900932b1471fa02e26ef56",
+      "defaultBranch": "main",
+      "kind": "upstream-fork",
+      "reviewedPaths": [
+        "README.md",
+        "config.py",
+        "main.py",
+        "requirements.txt"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/coai",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/coai",
+      "reviewedHead": "3cd8d9c0b667ba876e18b4a6b89d7aeab2dd6722",
+      "defaultBranch": "main",
+      "kind": "upstream-fork",
+      "reviewedPaths": [
+        "README_zh-CN.md",
+        "app/package.json",
+        "go.mod",
+        "main.go"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/xiangcunxiaozao",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/xiangcunxiaozao",
+      "reviewedHead": "28eb507f0591fb8167a8d339c63beadd20f2b876",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "README.md",
+        "apps/customer/package.json",
+        "apps/server/package.json",
+        "docs/交接/系统架构一页纸.md",
+        "docs/进度汇报-2026-10-27.md",
+        "package.json"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/job_radar",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/job_radar",
+      "reviewedHead": "b5a7ee9b7c30b0e51b862f5fa1db9eba41e6694f",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "README.md",
+        "docs/CANDIDATE-SEARCH.md",
+        "docs/COVERAGE.md",
+        "docs/DEVELOPMENT.md",
+        "docs/FRESHNESS.md",
+        "pyproject.toml"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/skill-healthcheck",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/skill-healthcheck",
+      "reviewedHead": "f319ece7ee871ac0ee55a4276379ea2711bde09c",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "CHANGELOG.md",
+        "README.zh.md",
+        "package.json",
+        "src/platforms.ts",
+        "src/why.ts",
+        "test/review-1.1.test.ts"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/unremember",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/unremember",
+      "reviewedHead": "16258ad02aa49d4e42db50c7493508e6d422c247",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "CHANGELOG.md",
+        "README.md",
+        "package.json",
+        "src/apply-core.ts",
+        "src/verify.ts",
+        "test/security-regressions.test.ts"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager",
+      "reviewedHead": "6560ef1d585782b84b22e8e15c74d87b26cf3ee7",
+      "defaultBranch": "main",
+      "kind": "profile",
+      "reviewedPaths": []
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/QGauss-AI",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/QGauss-AI",
+      "reviewedHead": "c3bc7af82ceff4b2509c5a6973d448432c34cac1",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "README.md",
+        "apps/api/package.json",
+        "apps/api/src/app.module.ts",
+        "apps/api/src/common/llm/chat-protocol.ts",
+        "apps/api/src/modules/chat/chat-accounting.service.ts",
+        "apps/web/package.json",
+        "docs/COMMERCE.md",
+        "docs/SECURITY.md",
+        "docs/STATUS.md",
+        "package.json"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/dsh-bug-gps",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/dsh-bug-gps",
+      "reviewedHead": "a0e5ea80ad95ad86f6d309aec2b4bd5689a191bb",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "README.md",
+        "bench/spike-s2-s3.md",
+        "package.json",
+        "src/core/caselock.js",
+        "src/core/reproduce.js",
+        "src/dsh/guard.js",
+        "test/counterexamples.test.js"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/dsh-agent-compare",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare",
+      "reviewedHead": "babc0b5e50eb43e17eeff6fbb36ae3b51dc07342",
+      "defaultBranch": "main",
+      "kind": "product",
+      "reviewedPaths": [
+        "README.md",
+        "docs/demo.md",
+        "docs/runs-and-recovery.md",
+        "package.json",
+        "src/core/adopt.ts",
+        "src/core/checks.ts",
+        "src/core/record-validation.ts"
+      ]
+    },
+    {
+      "repository": "lijiaqi-AI-Product-Manager/AirStudy",
+      "publicUrl": "https://github.com/lijiaqi-AI-Product-Manager/AirStudy",
+      "reviewedHead": "5f2aeecdf3a07bbd3304fca06cfcf2c1082c1c36",
+      "defaultBranch": "main",
+      "kind": "public-entry-with-local-review",
+      "reviewedPaths": [
+        "README.md"
+      ]
+    }
+  ],
+  "localEvidence": {
+    "AirStudy": [
+      "development entry",
+      "Gradle module and dependency configuration",
+      "current module specifications and stage records"
+    ]
+  },
+  "resumeEvidence": "Owner-provided AI Product Manager resume; Xiamen University Class of 2029. Original resume and private contact fields are not distributed."
+}
