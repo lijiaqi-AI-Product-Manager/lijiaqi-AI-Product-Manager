@@ -151,10 +151,10 @@ def nice_step(maximum):
 
 
 def render_chart(project, series, kind, theme, mobile, today):
-    width, height = (480, 400) if mobile else (960, 400)
-    pad = 24 if mobile else 40
-    left, right = (54, 456) if mobile else (68, 920)
-    top, bottom = (104, 300) if mobile else (110, 315)
+    width, height = (400, 360) if mobile else (960, 400)
+    pad = 20 if mobile else 40
+    left, right = (48, 380) if mobile else (68, 920)
+    top, bottom = (100, 262) if mobile else (110, 315)
     colors = ({"bg": "#f7f9f8", "fg": "#18322f", "muted": "#536963", "grid": "#dce6e2",
                "star": "#1b806b", "download": "#326fb3"} if theme == "light" else
               {"bg": "#101b1c", "fg": "#e5f0eb", "muted": "#a3b9b1", "grid": "#2c4541",
@@ -186,9 +186,9 @@ def render_chart(project, series, kind, theme, mobile, today):
            f'<rect width="{width}" height="{height}" rx="18" fill="{colors["bg"]}"/>',
            '<g font-family="Segoe UI,Arial,sans-serif">',
            f'<text x="{pad}" y="{38 if mobile else 44}" font-size="{20 if mobile else 24}" font-weight="600" fill="{colors["fg"]}">{escape(project["name"])}</text>',
-           f'<text x="{pad}" y="{61 if mobile else 72}" font-size="{12 if mobile else 14}" fill="{colors["muted"]}">{escape(subtitle)}</text>',
+           f'<text x="{pad}" y="{61 if mobile else 72}" font-size="{13 if mobile else 14}" fill="{colors["muted"]}">{escape(subtitle)}</text>',
            f'<text x="{right}" y="{38 if mobile else 45}" text-anchor="end" font-size="{24 if mobile else 30}" font-weight="600" fill="{colors["fg"]}">{value}</text>',
-           f'<text x="{right}" y="{61 if mobile else 72}" text-anchor="end" font-size="{10 if mobile else 12}" fill="{colors["muted"]}">{value_label}</text>']
+           f'<text x="{right}" y="{61 if mobile else 72}" text-anchor="end" font-size="{11 if mobile else 12}" fill="{colors["muted"]}">{value_label}</text>']
     if points:
         ordinals = [date.fromisoformat(p["date"]).toordinal() for p in points]
         first, last = min(ordinals), max(ordinals)
@@ -199,11 +199,11 @@ def render_chart(project, series, kind, theme, mobile, today):
         for tick in range(0, int(ymax) + 1, int(step)):
             y = ypos(tick)
             out.append(f'<path d="M {left} {y:.2f} H {right}" stroke="{colors["grid"]}" stroke-width="1"/>')
-            out.append(f'<text x="{left-10}" y="{y+4:.2f}" text-anchor="end" font-size="12" fill="{colors["muted"]}">{tick:,}</text>')
+            out.append(f'<text x="{left-10}" y="{y+4:.2f}" text-anchor="end" font-size="{13 if mobile else 12}" fill="{colors["muted"]}">{tick:,}</text>')
         ticks = sorted({first, last, (first + last) // 2})
         for day in ticks:
             anchor = "middle" if first == last or first < day < last else ("start" if day == first else "end")
-            out.append(f'<text x="{xpos(day):.2f}" y="{bottom+23}" text-anchor="{anchor}" font-size="12" fill="{colors["muted"]}">{date.fromordinal(day).isoformat()}</text>')
+            out.append(f'<text x="{xpos(day):.2f}" y="{bottom+23}" text-anchor="{anchor}" font-size="{13 if mobile else 12}" fill="{colors["muted"]}">{date.fromordinal(day).isoformat()}</text>')
         segments, segment = [], []
         previous = None
         for point, day in zip(points, ordinals):
@@ -224,9 +224,9 @@ def render_chart(project, series, kind, theme, mobile, today):
         out.append(f'<text x="{width/2}" y="200" text-anchor="middle" font-size="16" fill="{colors["fg"]}">{message}</text>')
         if series.get("published"):
             out.append(f'<text x="{width/2}" y="226" text-anchor="middle" font-size="13" fill="{colors["muted"]}">Package published {series["published"]}</text>')
-    out.append(f'<text x="{pad}" y="{349 if mobile else 365}" font-size="{11 if mobile else 12}" fill="{colors["muted"]}">{escape(update)}</text>')
-    for number, line in enumerate(textwrap.wrap(source_note, width=67 if mobile else 140)):
-        out.append(f'<text x="{pad}" y="{370+14*number if mobile else 386+14*number}" font-size="11" fill="{colors["muted"]}">{escape(line)}</text>')
+    out.append(f'<text x="{pad}" y="{309 if mobile else 365}" font-size="{11 if mobile else 12}" fill="{colors["muted"]}">{escape(update)}</text>')
+    for number, line in enumerate(textwrap.wrap(source_note, width=54 if mobile else 140)):
+        out.append(f'<text x="{pad}" y="{333+14*number if mobile else 386+14*number}" font-size="{12 if mobile else 11}" fill="{colors["muted"]}">{escape(line)}</text>')
     out.append("</g></svg>\n")
     return "".join(out)
 
