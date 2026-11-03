@@ -3,8 +3,8 @@
     "job_radar": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       },
       "downloads": {
         "status": "ok",
@@ -51,37 +51,37 @@
             "value": 443
           }
         ],
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "last_success_at": "2026-11-03T11:47:01+00:00"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "last_success_at": "2026-11-03T11:53:31+00:00"
       }
     },
     "dsh-agent-compare": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       },
       "downloads": {
         "status": "pending",
         "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-02/dsh-agent-compare",
         "points": [],
         "published": "2026-11-03",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "last_success_at": "2026-11-03T11:47:01+00:00"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "last_success_at": "2026-11-03T11:53:31+00:00"
       }
     },
     "dsh-bug-gps": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "skill-healthcheck": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       },
       "downloads": {
         "status": "ok",
@@ -132,15 +132,15 @@
             "value": 12
           }
         ],
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "last_success_at": "2026-11-03T11:47:01+00:00"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "last_success_at": "2026-11-03T11:53:31+00:00"
       }
     },
     "unremember": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       },
       "downloads": {
         "status": "ok",
@@ -191,59 +191,67 @@
             "value": 5
           }
         ],
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "last_success_at": "2026-11-03T11:47:01+00:00"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "last_success_at": "2026-11-03T11:53:31+00:00"
       }
     },
     "QGauss-AI": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "xiangcunxiaozao": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "AirStudy": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "lijiaqi-AI-Product-Manager": {
       "stars": {
-        "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "status": "ok",
+        "source": "https://api.github.com/repos/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/stargazers",
+        "points": [
+          {
+            "date": "2026-11-03",
+            "value": 0
+          }
+        ],
+        "total": 0,
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "last_success_at": "2026-11-03T11:53:31+00:00"
       }
     },
     "lobe-chat": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "coai": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     },
     "blob-service": {
       "stars": {
         "status": "unavailable",
-        "checked_at": "2026-11-03T11:47:01+00:00",
-        "error": "HTTPError: HTTP Error 401: Unauthorized"
+        "checked_at": "2026-11-03T11:53:31+00:00",
+        "error": "HTTPError: HTTP Error 403: Forbidden"
       }
     }
   },
-  "generated_at": "2026-11-03T11:47:01+00:00"
+  "generated_at": "2026-11-03T11:53:31+00:00"
 }
