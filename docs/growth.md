@@ -6,9 +6,9 @@ The public repositories embed SVG charts maintained here, with light, dark and m
 
 ## 自动刷新 · Automatic refresh
 
-现在按来源安排刷新：GitHub Star 与 npm 每小时检查一次（每小时第 17 分钟）；PyPI 在每日 01:15 UTC 之后首次任务中读取一次，通常为北京时间 09:17。检测到统计变化后，同一次任务生成 SVG，并把数据和图片放进同一条提交。当天数据和状态都没变化时不产生重复提交。下载源没有提供可接入的更新通知，因此采用定时检查；GitHub 排队与图片缓存可能增加显示延迟。
+现在按来源安排刷新：GitHub Star 与 npm 每 12 小时检查一次（北京时间 09:17 与 21:17）；PyPI 在每日 01:15 UTC 之后首次任务中读取一次，通常为北京时间 09:17。检测到统计变化后，同一次任务生成 SVG，并把数据和图片放进同一条提交。当天数据和状态都没变化时不产生重复提交。下载源没有提供可接入的更新通知，因此采用定时检查；GitHub 排队与图片缓存可能增加显示延迟。
 
-GitHub Stars and npm are checked hourly at minute 17. PyPI Stats is fetched once per UTC day, on the first run after 01:15 UTC (normally 09:17 Asia/Shanghai), after its documented daily update window. Any changed statistics are rendered immediately in the same run, and data plus SVGs are committed together. Identical same-day checks create no timestamp-only commits. These download sources provide no update notification used by this integration, so it polls; GitHub scheduling and image caches can add delay.
+GitHub Stars and npm are checked every 12 hours, at 09:17 and 21:17 Asia/Shanghai. PyPI Stats is fetched once per UTC day, on the first run after 01:15 UTC (normally 09:17 Asia/Shanghai), after its documented daily update window. Any changed statistics are rendered immediately in the same run, and data plus SVGs are committed together. Identical same-day checks create no timestamp-only commits. These download sources provide no update notification used by this integration, so it polls; GitHub scheduling and image caches can add delay.
 
 ## 统计口径 · Definitions
 

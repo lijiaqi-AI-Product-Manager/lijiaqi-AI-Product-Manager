@@ -29,7 +29,7 @@
 
 ## 增长图表
 
-各公开仓库的 Star 曲线与已发布包的每日下载请求由 `scripts/update_growth.py` 统一生成，范围在 `data/growth-config.json` 中登记。`Project growth charts` 工作流每小时检查 GitHub 与 npm，PyPI 在其每日更新时间后读取一次；数据变化时同步提交 `assets/growth/` 与公开聚合数据，未变化的当日轮询不重复提交；图片支持深浅主题和手机布局。新包数据缺失不写成零，请求失败保留上次成功结果并标明状态。统计口径见 [增长图表说明](growth.md)。
+各公开仓库的 Star 曲线与已发布包的每日下载请求由 `scripts/update_growth.py` 统一生成，范围在 `data/growth-config.json` 中登记。`Project growth charts` 工作流每 12 小时检查 GitHub 与 npm（北京时间 09:17 与 21:17），PyPI 在其每日更新时间后读取一次；数据变化时同步提交 `assets/growth/` 与公开聚合数据，未变化的当日轮询不重复提交；图片支持深浅主题和手机布局。新包数据缺失不写成零，请求失败保留上次成功结果并标明状态。统计口径见 [增长图表说明](growth.md)。
 
 ## 更新与检查
 
