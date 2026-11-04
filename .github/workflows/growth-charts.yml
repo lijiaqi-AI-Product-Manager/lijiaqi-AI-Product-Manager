@@ -2,13 +2,15 @@ name: Project growth charts
 
 on:
   schedule:
-    - cron: '23 7 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - scripts/update_growth.py
       - data/growth-config.json
+      - data/growth.json
+      - tests/test_growth.py
       - .github/workflows/growth-charts.yml
 
 permissions:

@@ -106,10 +106,20 @@ def collect_downloads(package, today, window_days):
         metadata = fetch_json(f"https://registry.npmjs.org/{quote(name, safe='')}")
         created = date.fromisoformat(metadata["time"]["created"][:10])
         start = max(start, created)
-        source = f"https://api.npmjs.org/downloads/range/{start}:{end}/{quote(name, safe='')}"
+        source = f"https://api.npmjs.org/downloads/point/last-day/{quote(name, safe='')}"
         if created > end:
             return {"status": "pending", "source": source, "points": [], "published": created.isoformat()}
         try:
+            latest = fetch_json(source)
+            if latest.get("package") != name:
+                raise ValueError("The npm response does not match the configured package")
+            valid_count(latest["downloads"])
+            end = min(end, date.fromisoformat(latest["end"]))
+            if created > end:
+                return {"status": "pending", "source": source, "points": [], "published": created.isoformat()}
+            if start > end:
+                raise ValueError("npm has no reported day in the requested statistics window")
+            source = f"https://api.npmjs.org/downloads/range/{start}:{end}/{quote(name, safe='')}"
             response = fetch_json(source)
         except HTTPError as error:
             if error.code == 404:
@@ -136,13 +146,56 @@ def refresh(previous, producer, stamp):
         result = producer()
         result["checked_at"] = stamp
         result["last_success_at"] = stamp
-        return result
     except Exception as error:
         result = dict(previous or {})
         result.update({"status": "stale" if result.get("points") else "unavailable",
                        "checked_at": stamp, "error": f"{type(error).__name__}: {error}"})
-        return result
+    # A metric or status change publishes immediately; identical same-day polls
+    # retain the committed snapshot instead of creating timestamp-only commits.
+    metadata = {"checked_at", "last_success_at"}
+    payload = lambda item: {key: value for key, value in item.items() if key not in metadata}
+    if (previous and previous.get("checked_at", "")[:10] == stamp[:10]
+            and payload(previous) == payload(result)):
+        return dict(previous)
+    return result
 
+
+def download_refresh_due(package, previous, stamp):
+    if package["registry"] != "pypi":
+        return True
+    now = datetime.fromisoformat(stamp).astimezone(timezone.utc)
+    # PyPI Stats updates at 01:00 UTC and asks clients to fetch once per day.
+    if now.hour * 60 + now.minute < 75:
+        return False
+    return (previous or {}).get("checked_at", "")[:10] != now.date().isoformat()
+
+
+def update_data(config, data, today, stamp):
+    projects = {}
+    failures = 0
+    for project in config["projects"]:
+        repo = project["repo"]
+        previous = data.get("projects", {}).get(repo, {})
+        saved = {"stars": refresh(previous.get("stars"),
+                 lambda: collect_stars(config["owner"], repo, today), stamp)}
+        if project.get("package"):
+            old_downloads = previous.get("downloads")
+            if download_refresh_due(project["package"], old_downloads, stamp):
+                saved["downloads"] = refresh(old_downloads,
+                    lambda: collect_downloads(project["package"], today, config["window_days"]), stamp)
+            else:
+                saved["downloads"] = dict(old_downloads or {"status": "pending", "points": []})
+        projects[repo] = saved
+        for kind, series in saved.items():
+            if series["status"] in {"stale", "unavailable"}:
+                failures += 1
+                print(f"::warning::{repo}/{kind}: {series['status']}; previous values retained when available")
+            else:
+                print(f"{repo}/{kind}: {series['status']} ({len(series.get('points', []))} reported dates)")
+    updated = dict(data, projects=projects)
+    if projects != data.get("projects") or not data.get("generated_at"):
+        updated["generated_at"] = stamp
+    return updated, failures
 
 def nice_step(maximum):
     raw = max(maximum / 4, 1)
@@ -260,20 +313,7 @@ def main():
     failures = 0
     if not args.render_only:
         stamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
-        for project in config["projects"]:
-            repo = project["repo"]
-            previous = data["projects"].get(repo, {})
-            saved = {"stars": refresh(previous.get("stars"), lambda: collect_stars(config["owner"], repo, args.today), stamp)}
-            if project.get("package"):
-                saved["downloads"] = refresh(previous.get("downloads"), lambda: collect_downloads(project["package"], args.today, config["window_days"]), stamp)
-            data["projects"][repo] = saved
-            for kind, series in saved.items():
-                if series["status"] in {"stale", "unavailable"}:
-                    failures += 1
-                    print(f"::warning::{repo}/{kind}: {series['status']}; previous values retained when available")
-                else:
-                    print(f"{repo}/{kind}: {series['status']} ({len(series.get('points', []))} reported dates)")
-        data["generated_at"] = stamp
+        data, failures = update_data(config, data, args.today, stamp)
         DATA.parent.mkdir(parents=True, exist_ok=True)
         DATA.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_assets(config, data, args.today)

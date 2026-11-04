@@ -4,6 +4,9 @@ from datetime import date
 from contextlib import nullcontext
 import importlib.util
 import io
+import json
+import sys
+from tempfile import TemporaryDirectory
 from pathlib import Path
 import unittest
 from unittest.mock import patch
@@ -92,6 +95,64 @@ class GrowthDataTests(unittest.TestCase):
         self.assertTrue(urls[0].endswith("/stargazers/history?per_page=30&page=1"))
         self.assertTrue(urls[1].endswith("/stargazers/count"))
         self.assertEqual(result["total"], 1)
+
+    def test_same_day_unchanged_refresh_does_not_rewrite_timestamps(self):
+        previous = {"status": "ok", "points": [{"date": "2026-11-03", "value": 4}],
+                    "total": 4, "checked_at": "2026-11-04T01:17:00+00:00",
+                    "last_success_at": "2026-11-04T01:17:00+00:00"}
+        payload = {"status": "ok", "points": previous["points"], "total": 4}
+        result = growth.refresh(previous, lambda: payload, "2026-11-04T02:17:00+00:00")
+        self.assertEqual(result, previous)
+
+    def test_pypi_is_read_once_daily_after_its_update_window(self):
+        package = {"registry": "pypi", "name": "demo"}
+        previous = {"checked_at": "2026-11-03T01:17:00+00:00"}
+        self.assertFalse(growth.download_refresh_due(package, previous, "2026-11-04T00:17:00+00:00"))
+        self.assertTrue(growth.download_refresh_due(package, previous, "2026-11-04T01:17:00+00:00"))
+        previous["checked_at"] = "2026-11-04T01:17:00+00:00"
+        self.assertFalse(growth.download_refresh_due(package, previous, "2026-11-04T02:17:00+00:00"))
+        self.assertTrue(growth.download_refresh_due({"registry": "npm"}, previous, "2026-11-04T02:17:00+00:00"))
+
+    def test_unchanged_hourly_check_preserves_the_committed_snapshot(self):
+        series = {"status": "ok", "points": [{"date": "2026-11-04", "value": 4}], "total": 4,
+                  "checked_at": "2026-11-04T01:17:00+00:00", "last_success_at": "2026-11-04T01:17:00+00:00"}
+        original = {"projects": {"demo": {"stars": series}}, "generated_at": "2026-11-04T01:17:00+00:00"}
+        config = {"owner": "example", "window_days": 90, "projects": [{"repo": "demo", "name": "Demo"}]}
+        payload = {k: v for k, v in series.items() if k not in {"checked_at", "last_success_at"}}
+        with patch.object(growth, "collect_stars", return_value=payload):
+            result, failures = growth.update_data(config, original, date(2026, 11, 4), "2026-11-04T02:17:00+00:00")
+        self.assertEqual(result, original)
+        self.assertEqual(failures, 0)
+
+    def test_npm_range_ends_at_the_latest_reported_day(self):
+        responses = [
+            {"time": {"created": "2026-11-01T10:00:00Z"}},
+            {"package": "demo", "downloads": 8, "start": "2026-11-02", "end": "2026-11-02"},
+            {"package": "demo", "downloads": [{"day": "2026-11-01", "downloads": 3},
+                                              {"day": "2026-11-02", "downloads": 8}]},
+        ]
+        with patch.object(growth, "fetch_json", side_effect=responses) as request:
+            result = growth.collect_downloads({"registry": "npm", "name": "demo"}, date(2026, 11, 4), 90)
+        self.assertIn("/2026-11-01:2026-11-02/demo", request.call_args_list[-1].args[0])
+        self.assertEqual(result["points"][-1], {"date": "2026-11-02", "value": 8})
+
+    def test_refresh_publishes_new_data_and_all_image_variants_together(self):
+        config = {"owner": "example", "window_days": 90, "projects": [{"repo": "demo", "name": "Demo"}]}
+        with TemporaryDirectory(dir=Path(__file__).parent) as directory:
+            root = Path(directory)
+            config_path, data_path, assets = root / "config.json", root / "data.json", root / "assets"
+            config_path.write_text(json.dumps(config), encoding="utf-8")
+            payload = {"status": "ok", "points": [{"date": "2026-11-04", "value": 9}], "total": 9}
+            with patch.object(growth, "CONFIG", config_path), patch.object(growth, "DATA", data_path), \
+                    patch.object(growth, "ASSETS", assets), patch.object(growth, "collect_stars", return_value=payload), \
+                    patch.object(sys, "argv", ["update_growth.py", "--today", "2026-11-04"]):
+                self.assertEqual(growth.main(), 0)
+            stored = json.loads(data_path.read_text(encoding="utf-8"))
+            self.assertEqual(stored["projects"]["demo"]["stars"]["total"], 9)
+            images = list(assets.rglob("*.svg"))
+            self.assertEqual(len(images), 4)
+            for path in images:
+                self.assertIn("2026-11-04: 9", path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":
