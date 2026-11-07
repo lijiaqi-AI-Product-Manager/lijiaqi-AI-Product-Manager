@@ -178,33 +178,6 @@ My account also contains forks of Lobe Chat, CoAI and Blob Service, used to stud
 
 <br>
 
-<!-- project-growth:start -->
-
-## 项目增长 · Project growth
-
-Star 历史每天自动更新。更新日期采用 UTC，Star 日期沿用 GitHub 聚合口径。
-
-Star history updates daily. Refresh dates use UTC; Star dates follow GitHub's aggregates.
-
-<a href="https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/stargazers">
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-mobile-dark.svg">
-  <source media="(max-width: 600px)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-dark.svg">
-  <img src="https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/main/assets/growth/lijiaqi-AI-Product-Manager/stars-light.svg" width="960" alt="Li Jiaqi / Gauss · GitHub Star 历史 / GitHub Star history">
-</picture>
-</a>
-
-各项目的下载请求趋势见对应项目 README。
-
-Download-request trends for individual projects appear in their own READMEs.
-
-[数据来源与统计口径 / Data sources and metric definitions](https://github.com/lijiaqi-AI-Product-Manager/lijiaqi-AI-Product-Manager/blob/main/docs/growth.md)
-
-<!-- project-growth:end -->
-
-<br>
-
 <a href="mailto:lijiaqi.mun@gmail.com">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg">
