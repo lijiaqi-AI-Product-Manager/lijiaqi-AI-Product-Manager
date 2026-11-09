@@ -12,7 +12,7 @@
 
 产品交互围绕：选择机场与路线 → 准备专注会话 → 计时与声音 → 完成 → 登机牌与记录。具体模式以已实现和已验证的链路为准。
 
-本地开发从工程的开发入口与当前模块规格开始，配置 Android SDK 与 JDK 后，用 Gradle wrapper 构建、运行相关模块测试。当前公开仓库只有项目名称与许可证，**不提供完整 Android 源码、公开安装教程或可下载成品**；本页不把本地实现描述成公开代码交付。
+公开实现在 [work/single-flight-integration 开发分支](https://github.com/lijiaqi-AI-Product-Manager/AirStudy/tree/work/single-flight-integration)，包含 Android 工程、运行说明及服务端目录。按该分支的 [运行与配置](https://github.com/lijiaqi-AI-Product-Manager/AirStudy/blob/work/single-flight-integration/docs/development.md)准备 JDK 与 Android SDK，再用 Gradle wrapper 构建和运行相关模块测试。main 分支的简短介绍不代表开发分支的交付范围。
 
 ## 迭代中处理的难题
 
@@ -24,8 +24,8 @@
 
 ## 公开范围
 
-上述说明来自本地工程的开发入口、Gradle 配置、模块规格和阶段记录，审阅于 2026-11-03。完整地图体验、部分正计时结果记录与再次起飞链路，以及全产品设备与参考对照，仍不能按现有材料宣称全部完成。
+工程历史依据 2026-11-03 的本地审阅；公开入口于 2026-11-09 核对开发分支 README。该分支列出了已接入的飞行与记录流程，以及仍待完成的云端同步、地图体验、统计和手机适配等范围。当前公开开发代码不等于已发布安装包，也不替代构建与设备验收；具体状态以分支当期文档和验证记录为准。
 
-不公开本地原始应用包、反编译材料、第三方资源或私人验证文件。后续公开实现需以实际仓库内容为准。
+不公开本地原始应用包、反编译材料、第三方资源或私人验证文件。公开源码与本地历史材料分别说明，不由其中一方推定另一方已全部交付。
 
-[公开项目入口](https://github.com/lijiaqi-AI-Product-Manager/AirStudy) · [全部项目](../project-atlas.md)
+[公开开发分支](https://github.com/lijiaqi-AI-Product-Manager/AirStudy/tree/work/single-flight-integration) · [全部项目](../project-atlas.md)
