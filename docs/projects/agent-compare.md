@@ -1,34 +1,44 @@
 # AgentCompare
 
-**同一需求，两版真跑，盲选再揭晓。** 这是 DeepSeek Harness 插件，面向需要比较界面与交互方案的前端开发者、产品与设计人员，以及 AI Coding 使用者。
+在 DeepSeek Harness 主对话中比较同一任务的 2–4 个方案，结果可以是回答、文件或可运行的网页。面向需要比较 AI 输出、代码方案与界面交互的开发者、产品和设计人员。
+
+当前功能描述依据 2026-11-09 的公开 README 与使用文档更新。下方工程问题保留首轮源码审阅的记录；具体平台兼容性与实际模型表现以源仓库当期验证为准。
 
 ## 功能与技术
 
-使用 TypeScript、React、Git worktree 与 DSH 宿主接口，把同一基线复制成两份候选，支持“同一模型、两种策略”与“两个模型、同一要求”。候选分别生成、安装依赖、构建并真实运行，在同一窗口交互体验；选定后揭晓模型、策略与 token 用量。
+TypeScript、React 和 DSH 宿主接口负责方案设置、并行任务、结果展示与主对话衔接。可选择不同模型与风格，进行盲选或公开比较；可运行网页提供实际预览，回答与文件提供各自的阅读、复制和保存入口。
 
-共同验收在生成前确定并绑定内容，结合项目脚本、页面加载、交互步骤与桌面 / 手机截图。采用前展示差异和目标仓库，验证组合结果后写回，保留采用、恢复和撤销记录。历史比较可跨对话搜索，预览停止后仍可看验收截图。
+Git 项目使用独立工作副本，从相同基线开始。生成前绑定验收脚本及相关配置，生成后封存候选。用户检查差异与组合结果后，再确认采用；采用、撤销与中断恢复有持久记录。非 Git 文件夹可以从空白隔离目录比较，将选定结果保存到新子目录。
+
+比较、选择、采用和撤销结果进入所属主对话的记忆；后续可以继续讨论和修改选定结果。主对话上下文可以选择共享范围。
 
 ## 上手路径
 
-克隆源码，运行 `npm ci` 与 `npm pack`，按仓库安装说明将打出的本地包添加到自己的 DSH profile。桌面版使用应用的插件入口。
+DSH 桌面端通过“插件 → 添加插件”安装 dsh-agent-compare；自行管理的 Web profile 按[源仓库安装说明](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare#install)操作。
 
-在输入框点 **A|B**，选择比较方式与生成上限，写下前端需求。两版运行后先体验再选；展开差异，点“审查并采用”，核对目标与验收结果后写回。内置示例在独立仓库运行，适合先熟悉全流程。
+在输入框左下角点 A|B，选择方案数、模型、风格、盲选或公开比较及时间上限，发送任务。逐个阅读结果或操作网页，选择后检查文件改动；需要写回时核对目标并确认采用，也可将结果另存。
+
+[英文安装与教程](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/README.en.md#install)
 
 ## 迭代中解决的难题
 
-- **起点不一致：** 私有临时 index 捕获包括未提交、未跟踪文件的同一基线，不改用户原 index；依赖与候选各用独立副本。
-- **改测试来获得通过：** 绑定脚本、配置、测试与锁文件，生成后封存提交和补丁；改验收内容的候选不能直接采用。
-- **候选期间用户继续编辑：** 重叠改动直接阻止；其他改动先与候选组合预演。每次写入前再次核对工作区、HEAD 和暂存区。
-- **中断与回滚：** 先持久保存写入意图和采用前快照；恢复只处理本次尝试写过的路径，保护随后发生的用户编辑。
-- **并发与资源归属：** 预先占用启动名额，验证 worktree 双向链接与归属标记；仅结束可证明属于插件的进程。旧记录与损坏历史保留可读状态。
-- **Windows 与浏览器环境：** 处理路径大小写、Git 管理目录和受限命令行为；预览使用独立随机 localhost 主机名，减少两个候选共享浏览器存储。
+以下记录始于 2026-11-03 的代码审阅，保留问题与处理原因，不用一次演示代替所有场景的验证。
+
+- 起点不一致：临时 Git index 捕获包含未提交、未跟踪文件的共同基线，候选依赖和运行分别隔离。
+- 修改验收来获得通过：绑定脚本、配置、测试与锁文件，再封存候选提交和补丁。
+- 生成期间用户继续编辑：核对重叠改动，并在写入前检查当前工作区和候选的组合结果。
+- 中断与回滚：先保存写入意图和采用前快照，恢复时保留随后发生的用户编辑。
+- 并发与资源归属：验证工作副本、记录和进程归属，避免清理不属于本次任务的资源。
+- Windows 与浏览器差异：处理路径、Git 管理目录、子进程及浏览器存储边界；平台约束与实际执行能力分别说明。
 
 ## 演示与范围
 
-[![固定候选演示：真实运行、共同验收、选择与采用](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/main/docs/media/comparison-preview.gif)](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/media/comparison-workflow.mp4)
+[![固定候选四方案的实际操作：预览、选择与保存](https://raw.githubusercontent.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/main/docs/media/comparison-preview.gif)](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/media/comparison-workflow.mp4)
 
-演示使用固定候选，运行与采用实际执行，等待段已剪辑。首期支持本地 Git 仓库根目录的 Vite 前端；登录、共享后端与外部数据库等工作流不在当前验收范围。程序检查覆盖已定义行为，自由文本需求的审美与体验仍由人判断。宿主提供的 Windows 约束有明确边界，不能称为完整恶意代码沙箱。
+演示在真实 DSH 宿主中操作固定候选，等待段经过剪辑，不代表外部模型生成质量或任务耗时。[演示条件与结果](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/demo.md)
 
-依据：[README](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/README.md)、[采用实现](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/src/core/adopt.ts)、[恢复说明](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/runs-and-recovery.md)、回归用例与提交记录。审阅于 2026-11-03。
+当前支持文件夹中的回答、文件比较，以及 Git 项目根目录或子目录中的 Vite、Node 和静态网页路径。内容比较不等于任意语言的运行与功能验证。登录、共享后端和外部数据库仍需独立验证；程序检查覆盖已定义行为，审美判断由使用者完成。宿主约束有平台边界，不将其描述为完整的恶意代码沙箱。
 
-[仓库与安装](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare) · [全部项目](../project-atlas.md)
+依据：[README](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/README.md)、[项目与文件夹范围](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/workspaces-and-projects.md)、[对话上下文](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/conversation-memory.md)、[采用与恢复](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/docs/runs-and-recovery.md)。
+
+[仓库与安装](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare) · [全部项目档案](../project-atlas.md)

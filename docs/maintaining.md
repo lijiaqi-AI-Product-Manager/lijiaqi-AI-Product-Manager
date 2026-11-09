@@ -1,45 +1,45 @@
 # 主页与项目档案维护
 
-这是李佳奇的 GitHub 个人主页仓库，包含中英双语主页、独立英文介绍、原创 SVG 视觉、公开项目知识库与履历摘要。主页用代表作品建立第一印象，详细能力、教程、工程经历与范围保存在独立档案。
+本仓库是李佳奇的 GitHub 个人主页。主页用于快速认识作者、选择项目和找到使用入口；功能细节、工程记录和履历保存在独立档案中。
 
 ## 内容组织
 
-- `README.md`：中英并列主页，六个代表作品、产品实践、能力与经历。
-- `README.en.md`：英文入口，信息与中文主页一致。
-- `docs/project-atlas.md`：全部公开仓库的持久索引。
-- `docs/project-atlas.en.md`：英文项目全景、上手方法、工程经验和范围说明。
-- `docs/projects/`：逐项目功能、技术、使用方法与关键工程问题。
-- `docs/experience.md`：从本人简历整理的公开履历摘要。
-- `docs/experience.en.md`：对应的英文履历摘要。
-- `docs/review-sources.json`：本轮审阅的仓库基准与来源路径。
-- `AGENTS.md`：后续维护者的事实与写作约定。
-- `scripts/build_assets.py`：原创封面、产品示意卡片与流程图的生成源。
+- README.md：中文为主，保留简短英文摘要和独立英文入口。
+- README.en.md：完整英文入口，与主页保持项目、经历和状态一致。
+- docs/project-atlas.md 与 docs/project-atlas.en.md：有审阅日期的项目档案索引，不作为账号当前全部仓库清单。
+- docs/projects/：项目的问题、功能、技术、上手路径、工程反例、范围和来源。
+- docs/experience.md 与 docs/experience.en.md：从本人履历整理的公开经历。
+- docs/review-sources.json：基准审阅的来源记录。
+- AGENTS.md：事实、写作与维护约定。
 
-项目档案是可以再次读取和更新的长期参考。它不意味着外部记忆服务已自动接入，也不会自动追踪其他仓库的新提交。
+档案有各自的审阅日期，不能替代源仓库的当前说明。更新功能描述时核实当前来源，并同步对应的中英文档案。
 
-## 视觉与兼容
+## 阅读与视觉
 
-使用暖白 / 墨绿、薄荷与铜色的统一视觉，封面建立人物识别，产品卡片以各自流程表达用途。示意图为原创绘制，不冒充应用截图。AgentCompare 与 BugGPS 动图直接引用各自公开仓库的实际演示，并注明演示条件。
+主页优先使用 GitHub 原生 Markdown、单栏段落和真实链接，跟随 GitHub 的深浅主题与正文排版。长篇文字不用固定两列表格排版；身份不在图片和正文中重复介绍。项目先说明能做什么，再给技术与使用入口。
 
-主页的正文、导航、项目说明、经历与图示同时提供中文和英文。独立英文页与英文指南形成完整阅读路径；保留源招聘文本及实际演示界面的原语言，不把介绍的翻译写成产品已提供对应语言功能。
+中英信息均须可读，但不把每段中文逐句重复成长英文块。中文主页使用简短英文摘要，海外读者可进入独立英文页与英文项目指南。重要文字保持可复制，导航不做成图片。
 
-深浅主题通过 GitHub 支持的 `picture` 与 `prefers-color-scheme` 选择；正文使用原生 Markdown 和简单 HTML，提供可复制文字、真实链接和折叠区域。GitHub README 不执行任意 JavaScript 或自定义网页插件，因此视觉在原生支持范围内实现。
+只有能帮助理解产品的图片或演示才进入主页。真实运行素材注明固定候选、剪辑和界面语言；不把示意图当产品截图，也不把受控演示当模型性能测试。演示放在原生 details 中按需展开。
 
-设计研究参考 [Awesome GitHub Profile README](https://github.com/abhisheknaiidu/awesome-github-profile-readme)、[Caneco](https://github.com/caneco/caneco)、[DenverCoder1](https://github.com/DenverCoder1/DenverCoder1) 与 [Sindre Sorhus](https://github.com/sindresorhus/sindresorhus)，提取人物识别、作品导航、统一卡片和简洁产品入口的组织方式。没有复制它们的代码、插画或个人陈述。
+assets/ 根目录和 scripts/build_assets.py 保留此前封面、产品示意图和流程图的生成记录，当前主页不依赖这些装饰素材。修改保留素材时，仍应同时维护生成源与产物。不要因它们仍在仓库中就自动恢复到主页。
+
+GitHub README 不执行自定义 JavaScript 或任意页面插件。视觉检查应针对实际的 GitHub 渲染，不以本地网页预览替代。至少检查手机宽度和桌面宽度、深浅主题、英文页与关键链接。
 
 ## 增长图表
 
-各公开仓库的 Star 曲线与已发布包的每日下载请求由 `scripts/update_growth.py` 统一生成，范围在 `data/growth-config.json` 中登记。`Project growth charts` 工作流每 12 小时检查 GitHub 与 npm（北京时间 09:17 与 21:17），PyPI 在其每日更新时间后读取一次；数据变化时同步提交 `assets/growth/` 与公开聚合数据，未变化的当日轮询不重复提交；图片支持深浅主题和手机布局。新包数据缺失不写成零，请求失败保留上次成功结果并标明状态。统计口径见 [增长图表说明](growth.md)。
+纳入 data/growth-config.json 的仓库由 scripts/update_growth.py 统一维护 Star 曲线和已发布包的每日下载请求。工作流每 12 小时检查 GitHub 与 npm（北京时间 09:17、21:17），PyPI 在其每日更新时间后读取一次。
+
+数据变化时同步提交 assets/growth/ 与公开聚合数据；当日相同数据不产生时间戳更新提交。数据缺失不补成零，请求失败保留上次成功结果并标明状态。请求量不换算成用户，图表不展示 Star 用户身份。详见[统计口径](growth.md)。
+
+本轮主页排版调整不改变增长工作流和其他仓库的 README。
 
 ## 更新与检查
 
-```bash
-python scripts/build_assets.py
-python scripts/check_profile.py
-```
+运行 Python 脚本 scripts/check_profile.py 检查本地链接、替代文本、SVG 结构和主页版本号展示。CI 还运行 scripts/build_assets.py，并用 git diff 确认保留素材可以确定性重建。
 
-CI 检查本地链接、图片替代文本、SVG 结构与版本号展示，并确认素材可从源码确定性重建。视觉检查另在实际浏览器完成；结构检查不能替代视觉判断。
+结构检查通过后，仍需在实际 GitHub 页面检查排版。不要用代码检查替代手机阅读体验。
 
-更新项目时先核实对应代码、范围说明、测试和提交，再更新档案与主页。动态数据注明快照日期和统计单位；履历只保留可以表达清楚的经历。不要把原始简历或私人联系方式作为主页附件上传。
+对外文案不展示项目版本号，不写未实现能力、目标人群冒充用户量、待实习冒充工作成果或 Fork 冒充原创。不要提交原始简历、电话、私人会话、内部业务数据和凭据。
 
-[返回主页](../README.md) · [项目知识库](project-atlas.md)
+[返回主页](../README.md) · [项目档案](project-atlas.md)

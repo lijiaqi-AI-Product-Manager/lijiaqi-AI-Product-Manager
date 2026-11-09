@@ -2,13 +2,13 @@
 
 [中文](project-atlas.md) · **English** · [Bilingual profile](../README.md) · [English profile](../README.en.md)
 
-This guide covers the problems, audiences, features, technology, entry points and engineering lessons behind my public projects. Reviewed on **3 November 2026**, the scope includes 12 public repositories: eight product projects, three upstream forks and this profile. AirStudy's implementation notes also draw on a local engineering review; its public repository does not contain the complete application.
+This guide covers the problems, audiences, features, technology, entry points and engineering lessons behind my public projects. The baseline review on **3 November 2026** covered 12 public repositories: eight product projects, three upstream forks and this profile. This is a dated review scope, not a current inventory of the account. AgentCompare notes were updated from current public documentation on 9 November 2026. AirStudy's implementation notes also draw on a local engineering review; its public repository does not contain the complete application.
 
 | Project | Purpose | Main technology |
 | :--- | :--- | :--- |
 | [job_radar](#job-radar) | Search traceable Chinese recruitment data locally | Python, SQLite, CLI, MCP, GitHub Actions |
 | [QGauss AI](#qgauss) | A self-hosted multimodal creative workspace | TypeScript, Vue, NestJS, Prisma, SQLite |
-| [AgentCompare](#agent-compare) | Run and compare two front-end implementations | TypeScript, React, Git worktree, DSH |
+| [AgentCompare](#agent-compare) | Compare answers, files and live pages in DSH | TypeScript, React, Git worktree, DSH |
 | [BugGPS](#bug-gps) | Record a browser bug and verify its fix by replay | JavaScript, Playwright, Git, DSH |
 | [skill-healthcheck](#skill-healthcheck) | Diagnose skills that silently stopped working | TypeScript, Git, YAML, local session evidence |
 | [unremember](#unremember) | Selective, reversible forgetting for local agents | TypeScript, JSONL, Zstandard, SHA-256 |
@@ -62,15 +62,15 @@ Open `http://127.0.0.1:9520/setup`, use the local installation credential to cre
 
 ## AgentCompare
 
-**Problem and audience.** Front-end developers, product builders and designers need to experience two generated implementations under comparable conditions, then adopt their choice without overwriting concurrent work.
+**Problem and audience.** Developers, product builders and designers need to compare answers and implementations under the same task, inspect the results and choose what to keep.
 
-**What it does.** This DeepSeek Harness plugin uses TypeScript, React, independent Git worktrees and shared browser checks. Compare one model using two strategies, or two configured models with the same requirements. Both applications actually run. Choose before revealing the models or strategies, inspect changes, then review adoption and retain recovery records.
+**What it does.** This DeepSeek Harness plugin compares 2–4 answers, files or runnable web pages in the main conversation. Set models and styles, compare blind or openly, then review changes before adopting or saving a result. TypeScript and React connect settings, isolated candidates, live previews and conversation memory. A Git project starts candidates from a shared baseline; a plain folder can start empty and save the choice into a new subfolder.
 
-**Getting started.** Clone the source, run `npm ci` and `npm pack`, then follow the repository's instructions to add the local package to your DSH profile. In the composer, select **A|B**, choose a comparison mode and time budget, and submit a front-end requirement. Interact with both previews, select one, review the diff and target repository, then confirm adoption. The built-in example runs in a separate repository.
+**Getting started.** Install dsh-agent-compare through the DSH Desktop Plugins page, or follow the [Web-profile instructions](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare/blob/main/README.en.md#install). Click A|B in the composer, choose the number of versions and comparison settings, and send a task. Read answers and files or try the pages before choosing; inspect the target and changes before confirming adoption.
 
-**Engineering lessons.** Both candidates start from the same baseline, including uncommitted work. Acceptance scripts, configuration and test content are bound before generation so candidates cannot pass by rewriting the checks. Concurrent user edits require overlap detection and combination rehearsal. Durable write intents and ownership checks support interrupted adoption, undo, worktree cleanup and process management. Independent localhost hostnames reduce shared browser state.
+**Engineering lessons.** The initial source review covered shared baselines, bound acceptance files, concurrent edits, adoption rehearsal, persistent recovery records and ownership-checked cleanup. Current features also keep comparison results in the owning conversation and allow an explicit choice of shared context. Model output quality and runtime support still need their own evidence.
 
-**Scope.** Current support focuses on local Git repositories with a root-level Vite front end. Shared backends, login flows and external databases are outside the validated workflow. Automated checks cover defined behavior; visual quality still needs human judgment. Host isolation has platform-specific limits. [Repository and installation](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare) · [Detailed Chinese notes](projects/agent-compare.md)
+**Scope.** Current documentation covers answers and files from any folder, plus Vite, Node and static-site previews in Git roots or subfolders. Content comparison does not establish arbitrary-language execution or functional coverage. Login, shared backends and external databases need separate validation; host isolation has platform-specific limits. Feature notes updated from public documentation on 9 November 2026; the engineering history retains its earlier review basis. [Repository](https://github.com/lijiaqi-AI-Product-Manager/dsh-agent-compare) · [Detailed Chinese notes](projects/agent-compare.md)
 
 <a id="bug-gps"></a>
 
