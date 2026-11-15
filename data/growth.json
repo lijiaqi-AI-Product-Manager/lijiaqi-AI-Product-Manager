@@ -116,12 +116,12 @@
           },
           {
             "date": "2026-11-14",
-            "value": 110
+            "value": 114
           }
         ],
-        "total": 110,
-        "checked_at": "2026-11-14T18:44:02+00:00",
-        "last_success_at": "2026-11-14T18:44:02+00:00"
+        "total": 114,
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       },
       "downloads": {
         "status": "ok",
@@ -210,10 +210,14 @@
           {
             "date": "2026-11-13",
             "value": 64
+          },
+          {
+            "date": "2026-11-14",
+            "value": 146
           }
         ],
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "dsh-agent-compare": {
@@ -272,20 +276,20 @@
           },
           {
             "date": "2026-11-13",
-            "value": 381
+            "value": 380
           },
           {
             "date": "2026-11-14",
-            "value": 423
+            "value": 424
           }
         ],
-        "total": 423,
-        "checked_at": "2026-11-14T18:44:02+00:00",
-        "last_success_at": "2026-11-14T18:44:02+00:00"
+        "total": 424,
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-13/dsh-agent-compare",
+        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-14/dsh-agent-compare",
         "points": [
           {
             "date": "2026-11-03",
@@ -330,10 +334,14 @@
           {
             "date": "2026-11-13",
             "value": 10294
+          },
+          {
+            "date": "2026-11-14",
+            "value": 49467
           }
         ],
-        "checked_at": "2026-11-14T18:44:02+00:00",
-        "last_success_at": "2026-11-14T18:44:02+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "dsh-bug-gps": {
@@ -400,8 +408,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "skill-healthcheck": {
@@ -524,12 +532,12 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-13/skill-healthcheck",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-14/skill-healthcheck",
         "points": [
           {
             "date": "2026-10-23",
@@ -618,10 +626,14 @@
           {
             "date": "2026-11-13",
             "value": 12
+          },
+          {
+            "date": "2026-11-14",
+            "value": 5
           }
         ],
-        "checked_at": "2026-11-14T18:44:02+00:00",
-        "last_success_at": "2026-11-14T18:44:02+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "unremember": {
@@ -744,12 +756,12 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-13/unremember",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-14/unremember",
         "points": [
           {
             "date": "2026-10-23",
@@ -838,10 +850,14 @@
           {
             "date": "2026-11-13",
             "value": 5
+          },
+          {
+            "date": "2026-11-14",
+            "value": 4
           }
         ],
-        "checked_at": "2026-11-14T18:44:02+00:00",
-        "last_success_at": "2026-11-14T18:44:02+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "QGauss-AI": {
@@ -936,8 +952,8 @@
           }
         ],
         "total": 2,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "xiangcunxiaozao": {
@@ -1088,8 +1104,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "AirStudy": {
@@ -1156,8 +1172,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "lijiaqi-AI-Product-Manager": {
@@ -1280,8 +1296,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "lobe-chat": {
@@ -2524,8 +2540,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "coai": {
@@ -3656,8 +3672,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     },
     "blob-service": {
@@ -4788,10 +4804,10 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-14T07:36:39+00:00",
-        "last_success_at": "2026-11-14T07:36:39+00:00"
+        "checked_at": "2026-11-15T07:50:38+00:00",
+        "last_success_at": "2026-11-15T07:50:38+00:00"
       }
     }
   },
-  "generated_at": "2026-11-14T18:44:02+00:00"
+  "generated_at": "2026-11-15T07:50:38+00:00"
 }
