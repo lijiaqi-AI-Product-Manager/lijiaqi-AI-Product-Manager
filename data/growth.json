@@ -324,16 +324,16 @@
           },
           {
             "date": "2026-11-18",
-            "value": 427
+            "value": 431
           }
         ],
-        "total": 427,
-        "checked_at": "2026-11-18T08:32:34+00:00",
-        "last_success_at": "2026-11-18T08:32:34+00:00"
+        "total": 431,
+        "checked_at": "2026-11-18T21:26:12+00:00",
+        "last_success_at": "2026-11-18T21:26:12+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-16/dsh-agent-compare",
+        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-17/dsh-agent-compare",
         "points": [
           {
             "date": "2026-11-03",
@@ -390,10 +390,14 @@
           {
             "date": "2026-11-16",
             "value": 42444
+          },
+          {
+            "date": "2026-11-17",
+            "value": 38044
           }
         ],
-        "checked_at": "2026-11-18T08:32:34+00:00",
-        "last_success_at": "2026-11-18T08:32:34+00:00"
+        "checked_at": "2026-11-18T21:26:12+00:00",
+        "last_success_at": "2026-11-18T21:26:12+00:00"
       }
     },
     "dsh-bug-gps": {
@@ -621,7 +625,7 @@
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-16/skill-healthcheck",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-17/skill-healthcheck",
         "points": [
           {
             "date": "2026-10-23",
@@ -722,10 +726,14 @@
           {
             "date": "2026-11-16",
             "value": 7
+          },
+          {
+            "date": "2026-11-17",
+            "value": 4
           }
         ],
-        "checked_at": "2026-11-18T08:32:34+00:00",
-        "last_success_at": "2026-11-18T08:32:34+00:00"
+        "checked_at": "2026-11-18T21:26:12+00:00",
+        "last_success_at": "2026-11-18T21:26:12+00:00"
       }
     },
     "unremember": {
@@ -869,7 +877,7 @@
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-16/unremember",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-17/unremember",
         "points": [
           {
             "date": "2026-10-23",
@@ -970,10 +978,14 @@
           {
             "date": "2026-11-16",
             "value": 2
+          },
+          {
+            "date": "2026-11-17",
+            "value": 0
           }
         ],
-        "checked_at": "2026-11-18T08:32:34+00:00",
-        "last_success_at": "2026-11-18T08:32:34+00:00"
+        "checked_at": "2026-11-18T21:26:12+00:00",
+        "last_success_at": "2026-11-18T21:26:12+00:00"
       }
     },
     "QGauss-AI": {
@@ -5037,5 +5049,5 @@
       }
     }
   },
-  "generated_at": "2026-11-18T08:32:34+00:00"
+  "generated_at": "2026-11-18T21:26:12+00:00"
 }
