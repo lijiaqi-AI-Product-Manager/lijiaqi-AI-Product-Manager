@@ -148,8 +148,8 @@
           }
         ],
         "total": 125,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       },
       "downloads": {
         "status": "ok",
@@ -266,10 +266,14 @@
           {
             "date": "2026-11-20",
             "value": 7
+          },
+          {
+            "date": "2026-11-21",
+            "value": 58
           }
         ],
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "dsh-agent-compare": {
@@ -360,16 +364,16 @@
           },
           {
             "date": "2026-11-21",
-            "value": 455
+            "value": 458
           }
         ],
-        "total": 455,
-        "checked_at": "2026-11-21T20:05:39+00:00",
-        "last_success_at": "2026-11-21T20:05:39+00:00"
+        "total": 458,
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-20/dsh-agent-compare",
+        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-21/dsh-agent-compare",
         "points": [
           {
             "date": "2026-11-03",
@@ -442,10 +446,14 @@
           {
             "date": "2026-11-20",
             "value": 24578
+          },
+          {
+            "date": "2026-11-21",
+            "value": 24512
           }
         ],
-        "checked_at": "2026-11-21T20:05:39+00:00",
-        "last_success_at": "2026-11-21T20:05:39+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "dsh-bug-gps": {
@@ -540,8 +548,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "skill-healthcheck": {
@@ -692,12 +700,12 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-20/skill-healthcheck",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-21/skill-healthcheck",
         "points": [
           {
             "date": "2026-10-23",
@@ -814,10 +822,14 @@
           {
             "date": "2026-11-20",
             "value": 2
+          },
+          {
+            "date": "2026-11-21",
+            "value": 2
           }
         ],
-        "checked_at": "2026-11-21T20:05:39+00:00",
-        "last_success_at": "2026-11-21T20:05:39+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "unremember": {
@@ -968,12 +980,12 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-20/unremember",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-21/unremember",
         "points": [
           {
             "date": "2026-10-23",
@@ -1090,10 +1102,14 @@
           {
             "date": "2026-11-20",
             "value": 0
+          },
+          {
+            "date": "2026-11-21",
+            "value": 2
           }
         ],
-        "checked_at": "2026-11-21T20:05:39+00:00",
-        "last_success_at": "2026-11-21T20:05:39+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "QGauss-AI": {
@@ -1216,8 +1232,8 @@
           }
         ],
         "total": 2,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "xiangcunxiaozao": {
@@ -1396,8 +1412,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "AirStudy": {
@@ -1492,8 +1508,8 @@
           }
         ],
         "total": 1,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "lijiaqi-AI-Product-Manager": {
@@ -1644,8 +1660,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "lobe-chat": {
@@ -2916,8 +2932,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "coai": {
@@ -4076,8 +4092,8 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     },
     "blob-service": {
@@ -5236,10 +5252,10 @@
           }
         ],
         "total": 0,
-        "checked_at": "2026-11-21T08:16:36+00:00",
-        "last_success_at": "2026-11-21T08:16:36+00:00"
+        "checked_at": "2026-11-22T07:59:03+00:00",
+        "last_success_at": "2026-11-22T07:59:03+00:00"
       }
     }
   },
-  "generated_at": "2026-11-21T20:05:39+00:00"
+  "generated_at": "2026-11-22T07:59:03+00:00"
 }
