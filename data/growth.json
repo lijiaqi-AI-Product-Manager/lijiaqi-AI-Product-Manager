@@ -286,10 +286,14 @@
           {
             "date": "2026-11-22",
             "value": 8
+          },
+          {
+            "date": "2026-11-23",
+            "value": 122
           }
         ],
-        "checked_at": "2026-11-23T09:02:25+00:00",
-        "last_success_at": "2026-11-23T09:02:25+00:00"
+        "checked_at": "2026-11-24T10:54:24+00:00",
+        "last_success_at": "2026-11-24T10:54:24+00:00"
       }
     },
     "dsh-agent-compare": {
@@ -336,72 +340,72 @@
           },
           {
             "date": "2026-11-10",
-            "value": 302
+            "value": 301
           },
           {
             "date": "2026-11-11",
-            "value": 333
+            "value": 332
           },
           {
             "date": "2026-11-12",
-            "value": 369
+            "value": 368
           },
           {
             "date": "2026-11-13",
-            "value": 380
+            "value": 379
           },
           {
             "date": "2026-11-14",
-            "value": 425
+            "value": 424
           },
           {
             "date": "2026-11-15",
-            "value": 425
+            "value": 424
           },
           {
             "date": "2026-11-16",
-            "value": 426
+            "value": 425
           },
           {
             "date": "2026-11-17",
-            "value": 427
+            "value": 426
           },
           {
             "date": "2026-11-18",
-            "value": 435
+            "value": 434
           },
           {
             "date": "2026-11-19",
-            "value": 439
+            "value": 438
           },
           {
             "date": "2026-11-20",
-            "value": 449
+            "value": 448
           },
           {
             "date": "2026-11-21",
-            "value": 458
+            "value": 457
           },
           {
             "date": "2026-11-22",
-            "value": 466
+            "value": 465
           },
           {
             "date": "2026-11-23",
-            "value": 471
+            "value": 479
           },
           {
             "date": "2026-11-24",
-            "value": 471
+            "value": 481
           }
         ],
-        "total": 471,
-        "checked_at": "2026-11-24T00:49:59+00:00",
-        "last_success_at": "2026-11-24T00:49:59+00:00"
+        "total": 481,
+        "checked_at": "2026-11-24T10:54:24+00:00",
+        "last_success_at": "2026-11-24T10:54:24+00:00"
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-22/dsh-agent-compare",
+        "source": "https://api.npmjs.org/downloads/range/2026-11-03:2026-11-23/dsh-agent-compare",
         "points": [
           {
             "date": "2026-11-03",
@@ -482,10 +486,14 @@
           {
             "date": "2026-11-22",
             "value": 24456
+          },
+          {
+            "date": "2026-11-23",
+            "value": 20527
           }
         ],
-        "checked_at": "2026-11-24T00:49:59+00:00",
-        "last_success_at": "2026-11-24T00:49:59+00:00"
+        "checked_at": "2026-11-24T10:54:24+00:00",
+        "last_success_at": "2026-11-24T10:54:24+00:00"
       }
     },
     "dsh-bug-gps": {
@@ -761,7 +769,7 @@
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-22/skill-healthcheck",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-23/skill-healthcheck",
         "points": [
           {
             "date": "2026-10-23",
@@ -886,10 +894,14 @@
           {
             "date": "2026-11-22",
             "value": 8
+          },
+          {
+            "date": "2026-11-23",
+            "value": 11
           }
         ],
-        "checked_at": "2026-11-24T00:49:59+00:00",
-        "last_success_at": "2026-11-24T00:49:59+00:00"
+        "checked_at": "2026-11-24T10:54:24+00:00",
+        "last_success_at": "2026-11-24T10:54:24+00:00"
       }
     },
     "unremember": {
@@ -1057,7 +1069,7 @@
       },
       "downloads": {
         "status": "ok",
-        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-22/unremember",
+        "source": "https://api.npmjs.org/downloads/range/2026-10-23:2026-11-23/unremember",
         "points": [
           {
             "date": "2026-10-23",
@@ -1182,10 +1194,14 @@
           {
             "date": "2026-11-22",
             "value": 6
+          },
+          {
+            "date": "2026-11-23",
+            "value": 6
           }
         ],
-        "checked_at": "2026-11-24T00:49:59+00:00",
-        "last_success_at": "2026-11-24T00:49:59+00:00"
+        "checked_at": "2026-11-24T10:54:24+00:00",
+        "last_success_at": "2026-11-24T10:54:24+00:00"
       }
     },
     "QGauss-AI": {
@@ -5417,5 +5433,5 @@
       }
     }
   },
-  "generated_at": "2026-11-24T00:49:59+00:00"
+  "generated_at": "2026-11-24T10:54:24+00:00"
 }
